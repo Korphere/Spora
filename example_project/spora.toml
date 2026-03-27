@@ -8,7 +8,7 @@ main = "Main"
 java = "21"
 
 [runtime]
-vendor = "temurin"
+vendor = "microsoft"
 version = "21"
 
 [dependencies]
