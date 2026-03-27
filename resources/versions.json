@@ -1,0 +1,44 @@
+{
+    "java": {
+        "microsoft": {
+            "21": {
+                "windows": {
+                    "x64": "https://download.visualstudio.microsoft.com/download/pr/5054199c-7f5b-4395-950e-561b36f1c437/ad88568c93439977202302302/microsoft-jdk-21.0.6-windows-x64.zip",
+                    "aarch64": "https://download.visualstudio.microsoft.com/download/pr/5054199c-7f5b-4395-950e-561b36f1c437/0e868779836940843657/microsoft-jdk-21.0.6-windows-aarch64.zip"
+                },
+                "mac": {
+                    "x64": "https://download.visualstudio.microsoft.com/download/pr/5054199c-7f5b-4395-950e-561b36f1c437/5d31518f8e714659b854/microsoft-jdk-21.0.6-macos-x64.tar.gz",
+                    "aarch64": "https://download.visualstudio.microsoft.com/download/pr/5054199c-7f5b-4395-950e-561b36f1c437/6e431780521e48819854/microsoft-jdk-21.0.6-macos-aarch64.tar.gz"
+                },
+                "linux": {
+                    "x64": "https://download.visualstudio.microsoft.com/download/pr/5054199c-7f5b-4395-950e-561b36f1c437/7e431780521e48819854/microsoft-jdk-21.0.6-linux-x64.tar.gz"
+                }
+            },
+            "17": {
+                "windows": {
+                    "x64": "https://download.visualstudio.microsoft.com/download/pr/0f7e4317-521e-4881-b854-3657ad88568c/microsoft-jdk-17.0.10-windows-x64.zip"
+                }
+            }
+        },
+        "zulu": {
+            "21": {
+                "windows": {
+                    "x64": "https://static.azul.com/zulu/bin/zulu21.38.21-ca-jdk21.0.5-win_x64.zip"
+                },
+                "mac": {
+                    "aarch64": "https://static.azul.com/zulu/bin/zulu21.38.21-ca-jdk21.0.5-macosx_aarch64.tar.gz"
+                },
+                "linux": {
+                    "x64": "https://static.azul.com/zulu/bin/zulu21.38.21-ca-jdk21.0.5-linux_x64.tar.gz"
+                }
+            }
+        },
+        "liberica": {
+            "21": {
+                "windows": {
+                    "x64": "https://download.bell-sw.com/java/21.0.5+11/bellsoft-jdk21.0.5+11-windows-amd64.zip"
+                }
+            }
+        }
+    }
+}

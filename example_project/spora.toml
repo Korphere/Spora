@@ -1,0 +1,14 @@
+[project]
+name = "example_project"
+lang = "java"
+version = "0.1.0"
+main = "Main"
+
+[toolchain]
+java = "21"
+
+[runtime]
+vendor = "temurin"
+version = "21"
+
+[dependencies]
