@@ -7,6 +7,7 @@ use tar::Archive;
 use crate::config::RuntimeConfig;
 use crate::logger::Logger;
 use std::io::{self, Seek, SeekFrom};
+use reqwest::redirect::Policy as RedirectPolicy;
 pub struct Toolchain;
 
 impl Toolchain {
@@ -58,6 +59,8 @@ impl Toolchain {
 
         let client = reqwest::blocking::Client::builder()
             .user_agent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36")
+            .redirect(RedirectPolicy::default())
+            .referer(true)
             .build()
             .expect("Failed to build HTTP client");
 
@@ -139,7 +142,7 @@ impl Toolchain {
                 let mut file = zip.by_index(i).unwrap();
                 let enclosed_path = file.enclosed_name().ok_or("Invalid file path in ZIP").unwrap();
                 let outpath = target_dir.join(enclosed_path);
-                println!("Extracting to: {:?}", outpath);
+                Logger::log_step("Extracting", &format!("to: {:?}", outpath));
                 if let Some(p) = outpath.parent() { 
                     fs::create_dir_all(&p).map_err(|e| println!("Dir error: {:?}", e)).ok(); 
                 }
