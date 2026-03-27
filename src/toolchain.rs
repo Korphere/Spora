@@ -121,7 +121,6 @@ impl Toolchain {
         };
 
         Logger::log_step("Download", &url);
-        //let mut response = reqwest::blocking::get(&url).expect("Download failed");
         let mut response = client.get(&url).send().expect("Download failed");
 
         let final_url = response.url().as_str().to_string();
@@ -181,5 +180,65 @@ impl Toolchain {
         let res = client.get(catalog_url).send()?;
         let json: Value = res.json()?;
         Ok(json)
+    }
+}
+
+#[cfg(test)]
+mod tests {
+use super::*;
+    use serde_json::Value;
+
+    #[test]
+    #[ignore]
+    fn test_catalog_urls_reachability() {
+        let catalog = Toolchain::fetch_catalog().expect("Failed to fetch catalog");
+        let client = reqwest::blocking::Client::builder()
+            .user_agent("Spora-Validator/0.1.2")
+            .timeout(std::time::Duration::from_secs(20))
+            .build()
+            .unwrap();
+
+        validate_urls(&catalog, &client);
+    }
+
+    fn validate_urls(value: &Value, client: &reqwest::blocking::Client) {
+        match value {
+            Value::String(url) => {
+                if url.starts_with("http") {
+                    let res = client.execute(client.head(url).build().unwrap());
+                    match res {
+                        Ok(resp) => {
+                            assert!(
+                                resp.status().is_success() || resp.status().is_redirection(),
+                                "URL is unreachable (Status {}): {}", resp.status(), url
+                            );
+                            println!("Passed: {}", url);
+                        }
+                        Err(e) => panic!("Request failed for {}: {}", url, e),
+                    }
+                }
+            }
+            Value::Object(map) => {
+                for v in map.values() {
+                    validate_urls(v, client);
+                }
+            }
+            Value::Array(arr) => {
+                for v in arr {
+                    validate_urls(v, client);
+                }
+            }
+            _ => {}
+        }
+    }
+
+    #[test]
+    fn test_binary_names() {
+        let binary_name = if cfg!(windows) { "bin/javac.exe" } else { "bin/javac" };
+        
+        assert!(binary_name.contains("javac"));
+        if cfg!(windows) {
+            assert!(binary_name.ends_with(".exe"));
+        }
     }
 }
