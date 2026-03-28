@@ -10,7 +10,7 @@
 ## ✨ 特徴
 
 - **Zero-Setup**: `spora.toml` を書くだけで、必要なJDKが自動的にダウンロード・配置されます。
-- **マルチベンダー対応**: Temurin, Microsoft, Corretto, Oracle, Zulu, Liberica 等をサポート。
+- **マルチベンダー対応**: Temurin, Microsoft, Corretto, Oracle, Zulu, Liberica, SAP, GraalVM CE 等をサポート。
 - **カタログ同期**: GitHub上の最新カタログと同期し、常に最新のマイナーアップデートを追跡。
 - **Rust製**: 爆速な動作と、最小限の依存関係。
 

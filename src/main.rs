@@ -340,6 +340,9 @@ version = "0.1.0"
 lang = "java"          # Language: "java" or "kotlin"
 main = "Main"          # The main class to run
 
+[toolchain]
+java = "21"
+
 [runtime]
 # Choose your preferred JDK vendor:
 # Options: "temurin", "microsoft", "corretto", "oracle", "zulu", "liberica"

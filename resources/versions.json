@@ -1,5 +1,65 @@
 {
     "java": {
+        "temurin": {
+            "25": {
+                "windows": {
+                    "x64": {
+                        "sha256": "06ac5f5444a1269dd11d11cbb7ab6ebaecedc60dc1caca82cdb56f29100b7b8c"
+                    }
+                },
+                "mac": {
+                    "x64": {
+                        "sha256": "7caddeb2d1d06a21487fdf55198349f122ba7b24bfc613b8923a42a133a92dc5"
+                    },
+                    "aarch64": {
+                        "sha256": "74ff6e892924a49767c35eb61251b1969c03213819d51065d9b8f9e0238c4f97"
+                    }
+                },
+                "linux": {
+                    "x64": {
+                        "sha256": "987387933b64b9833846dee373b640440d3e1fd48a04804ec01a6dbf718e8ab8"
+                    },
+                    "aarch64": {
+                        "sha256": "a9d73e711d967dc44896d4f430f73a68fd33590dabc29a7f2fb9f593425b854c"
+                    }
+                }
+            },
+            "21": {
+                "windows": {
+                    "x64": {
+                        "sha256": "08cae782814f027f8b159d6b68823f0f87422eb475c1a0ea1abc7a4357aaf11f"
+                    },
+                    "aarch64": {
+                        "sha256": "0e1f016cd74c05ab4fe2b2a839f6439e3dc516c9bb201bfb75d12b3fb2a63334"
+                    }
+                },
+                "mac": {
+                    "x64": {
+                        "sha256": "7484d5d4cdb02fc17a842ab86ddac2524a0365066659c46b2e258c64152379cd"
+                    },
+                    "aarch64": {
+                        "sha256": "01ca390455216ca27bdddf8cfad51aaedb4f90e1e23aad9bfd9e90caaa2c5f1b"
+                    }
+                },
+                "linux": {
+                    "x64": {
+                        "sha256": "ea3b9bd464d6dd253e9a7accf59f7ccd2a36e4aa69640b7251e3370caef896a4"
+                    },
+                    "aarch64": {
+                        "sha256": "357fee29fb0d5c079f6730db98b28942df13a6eed426f6c61cd4ad703ab27b9a"
+                    }
+                }
+            },
+            "17": {
+
+            },
+            "11": {
+
+            },
+            "8": {
+
+            }
+        },
         "microsoft": {
             "25": {
                 "windows": {
@@ -8,7 +68,8 @@
                         "sha256": "38d1a42d189c50b24152014ef131931f25f4cc80400ce618f0477f5e4e5aa252"
                     },
                     "aarch64": {
-                        "url": "https://aka.ms/download-jdk/microsoft-jdk-25.0.2-windows-aarch64.zip"
+                        "url": "https://aka.ms/download-jdk/microsoft-jdk-25.0.2-windows-aarch64.zip",
+                        "sha256": "e0d9380cf3d0b5efc675664fa0db22cc9eb5d77c4fd2a132f4b58df0608593cf"
                     }
                 },
                 "mac": {
@@ -17,7 +78,8 @@
                         "sha256": "6bc02fd3182dee12510f253d08eeac342a1f0e03d7f4114763f83d8722e2915e"
                     },
                     "aarch64": {
-                        "url": "https://aka.ms/download-jdk/microsoft-jdk-25.0.2-macos-aarch64.tar.gz"
+                        "url": "https://aka.ms/download-jdk/microsoft-jdk-25.0.2-macos-aarch64.tar.gz",
+                        "sha256": "0bface8af5ceea3bf8b7eec6d38f1a68b68b60db5ea14eb2a1bd9767cf971fed"
                     }
                 },
                 "linux": {
@@ -26,7 +88,8 @@
                         "sha256": "3ed688a48c9b9295e67f074a5d201f761af15f83a2e003e5d8fd6dd93c18a10a"
                     },
                     "aarch64": {
-                        "url": "https://aka.ms/download-jdk/microsoft-jdk-25.0.2-linux-aarch64.tar.gz"
+                        "url": "https://aka.ms/download-jdk/microsoft-jdk-25.0.2-linux-aarch64.tar.gz",
+                        "sha256": "bdc5fffc0d1e741ab7840b8e733fca48b70d1b6838db4d90b94a78b90e6ea8cb"
                     }
                 }
             },
@@ -110,6 +173,11 @@
             }
         },
         "zulu": {
+            "25": {
+                "linux": {
+                    "x64": "https://cdn.azul.com/zulu/bin/zulu25.32.21-ca-jdk25.0.2-linux_x64.tar.gz"
+                }
+            },
             "21": {
                 "windows": {
                     "x64": {
@@ -262,6 +330,136 @@
                     },
                     "aarch64": {
                         "url": "https://download.bell-sw.com/java/8u482+10/bellsoft-jdk8u482+10-linux-aarch64.tar.gz"
+                    }
+                }
+            }
+        },
+        "sap": {
+            "26": {
+                "windows": {
+                    "x64": {
+                        "url": "https://github.com/SAP/SapMachine/releases/download/sapmachine-26/sapmachine-jdk-26_windows-x64_bin.zip"
+                    }
+                },
+                "mac": {
+                    "aarch64": {
+                        "url": "https://github.com/SAP/SapMachine/releases/download/sapmachine-26/sapmachine-jdk-26_macos-aarch64_bin.tar.gz"
+                    }
+                },
+                "linux": {
+                    "x64": {
+                        "url": "https://github.com/SAP/SapMachine/releases/download/sapmachine-26/sapmachine-jdk-26_linux-x64_bin.tar.gz"
+                    },
+                    "aarch64": {
+                        "url": "https://github.com/SAP/SapMachine/releases/download/sapmachine-26/sapmachine-jdk-26_linux-aarch64_bin.tar.gz"
+                    }
+                }
+            },
+            "25": {
+                "windows": {
+                    "x64": {
+                        "url": "https://github.com/SAP/SapMachine/releases/download/sapmachine-25.0.3%2B6/sapmachine-jdk-25.0.3-ea.6_windows-x64_bin.zip"
+                    }
+                },
+                "mac": {
+                    "aarch64": {
+                        "url": "https://github.com/SAP/SapMachine/releases/download/sapmachine-25.0.3%2B6/sapmachine-jdk-25.0.3-ea.6_macos-aarch64_bin.tar.gz"
+                    }
+                },
+                "linux": {
+                    "x64": {
+                        "url": "https://github.com/SAP/SapMachine/releases/download/sapmachine-25.0.3%2B6/sapmachine-jdk-25.0.3-ea.6_linux-x64_bin.tar.gz"
+                    },
+                    "aarch64": {
+                        "url": "https://github.com/SAP/SapMachine/releases/download/sapmachine-25.0.3%2B6/sapmachine-jdk-25.0.3-ea.6_linux-aarch64_bin.tar.gz"
+                    }
+                }
+            },
+            "21": {
+                "windows": {
+                    "x64": {
+                        "url": "https://github.com/SAP/SapMachine/releases/download/sapmachine-21.0.11%2B7/sapmachine-jdk-21.0.11-ea.7_windows-x64_bin.zip"
+                    }
+                },
+                "mac": {
+                    "aarch64": {
+                        "url": "https://github.com/SAP/SapMachine/releases/download/sapmachine-21.0.11%2B7/sapmachine-jdk-21.0.11-ea.7_macos-aarch64_bin.tar.gz"
+                    }
+                },
+                "linux": {
+                    "x64": {
+                        "url": "https://github.com/SAP/SapMachine/releases/download/sapmachine-21.0.11%2B7/sapmachine-jdk-21.0.11-ea.7_linux-x64_bin.tar.gz"
+                    },
+                    "aarch64": {
+                        "url": "https://github.com/SAP/SapMachine/releases/download/sapmachine-21.0.11%2B7/sapmachine-jdk-21.0.11-ea.7_linux-aarch64_bin.tar.gz"
+                    }
+                }
+            },
+            "17": {
+                "windows": {
+                    "x64": {
+                        "url": "https://github.com/SAP/SapMachine/releases/download/sapmachine-17.0.19%2B7/sapmachine-jdk-17.0.19-ea.7_windows-x64_bin.zip"
+                    }
+                },
+                "mac": {
+                    "x64": {
+                        "url": "https://github.com/SAP/SapMachine/releases/download/sapmachine-17.0.19%2B7/sapmachine-jdk-17.0.19-ea.7_macos-x64_bin.tar.gz"
+                    },
+                    "aarch64": {
+                        "url": "https://github.com/SAP/SapMachine/releases/download/sapmachine-17.0.19%2B7/sapmachine-jdk-17.0.19-ea.7_macos-aarch64_bin.tar.gz"
+                    }
+                },
+                "linux": {
+                    "x64": {
+                        "url": "https://github.com/SAP/SapMachine/releases/download/sapmachine-17.0.19%2B7/sapmachine-jdk-17.0.19-ea.7_linux-x64_bin.tar.gz"
+                    },
+                    "aarch64": {
+                        "url": "https://github.com/SAP/SapMachine/releases/download/sapmachine-17.0.19%2B7/sapmachine-jdk-17.0.19-ea.7_linux-aarch64_bin.tar.gz"
+                    }
+                }
+            }
+        },
+        "graalvm-ce": {
+            "25": {
+                "windows": {
+                    "x64": {
+                        "url": "https://github.com/graalvm/graalvm-ce-builds/releases/download/jdk-25.0.2/graalvm-community-jdk-25.0.2_windows-x64_bin.zip"
+                    }
+                },
+                "mac": {
+                    "aarch64": {
+                        "url": "https://github.com/graalvm/graalvm-ce-builds/releases/download/jdk-25.0.2/graalvm-community-jdk-25.0.2_macos-aarch64_bin.tar.gz"
+                    }
+                },
+                "linux": {
+                    "x64": {
+                        "url": "https://github.com/graalvm/graalvm-ce-builds/releases/download/jdk-25.0.2/graalvm-community-jdk-25.0.2_linux-x64_bin.tar.gz"
+                    },
+                    "aarch64": {
+                        "url": "https://github.com/graalvm/graalvm-ce-builds/releases/download/jdk-25.0.2/graalvm-community-jdk-25.0.2_linux-aarch64_bin.tar.gz"
+                    }
+                }
+            },
+            "17": {
+                "windows": {
+                    "x64": {
+                        "url": "https://github.com/graalvm/graalvm-ce-builds/releases/download/jdk-17.0.7/graalvm-community-jdk-17.0.7_windows-x64_bin.zip"
+                    }
+                },
+                "mac": {
+                    "x64": {
+                        "url": "https://github.com/graalvm/graalvm-ce-builds/releases/download/jdk-17.0.7/graalvm-community-jdk-17.0.7_macos-x64_bin.tar.gz"
+                    },
+                    "aarch64": {
+                        "url": "https://github.com/graalvm/graalvm-ce-builds/releases/download/jdk-17.0.7/graalvm-community-jdk-17.0.7_macos-aarch64_bin.tar.gz"
+                    }
+                },
+                "linux": {
+                    "x64": {
+                        "url": "https://github.com/graalvm/graalvm-ce-builds/releases/download/jdk-17.0.7/graalvm-community-jdk-17.0.7_linux-x64_bin.tar.gz"
+                    },
+                    "aarch64": {
+                        "url": "https://github.com/graalvm/graalvm-ce-builds/releases/download/jdk-17.0.7/graalvm-community-jdk-17.0.7_linux-aarch64_bin.tar.gz"
                     }
                 }
             }
