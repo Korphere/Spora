@@ -3,76 +3,266 @@
         "microsoft": {
             "25": {
                 "windows": {
-                    "x64": "https://aka.ms/download-jdk/microsoft-jdk-25.0.2-windows-x64.zip",
-                    "aarch64": "https://aka.ms/download-jdk/microsoft-jdk-25.0.2-windows-aarch64.zip"
+                    "x64": {
+                        "url": "https://aka.ms/download-jdk/microsoft-jdk-25.0.2-windows-x64.zip",
+                        "sha256": "38d1a42d189c50b24152014ef131931f25f4cc80400ce618f0477f5e4e5aa252"
+                    },
+                    "aarch64": {
+                        "url": "https://aka.ms/download-jdk/microsoft-jdk-25.0.2-windows-aarch64.zip"
+                    }
                 },
                 "mac": {
-                    "x64": "https://aka.ms/download-jdk/microsoft-jdk-25.0.2-macos-x64.tar.gz",
-                    "aarch64": "https://aka.ms/download-jdk/microsoft-jdk-25.0.2-macos-aarch64.tar.gz"
+                    "x64": {
+                        "url": "https://aka.ms/download-jdk/microsoft-jdk-25.0.2-macos-x64.tar.gz",
+                        "sha256": "6bc02fd3182dee12510f253d08eeac342a1f0e03d7f4114763f83d8722e2915e"
+                    },
+                    "aarch64": {
+                        "url": "https://aka.ms/download-jdk/microsoft-jdk-25.0.2-macos-aarch64.tar.gz"
+                    }
                 },
                 "linux": {
-                    "x64": "https://aka.ms/download-jdk/microsoft-jdk-25.0.2-linux-x64.tar.gz",
-                    "aarch64": "https://aka.ms/download-jdk/microsoft-jdk-25.0.2-linux-aarch64.tar.gz"
+                    "x64": {
+                        "url": "https://aka.ms/download-jdk/microsoft-jdk-25.0.2-linux-x64.tar.gz",
+                        "sha256": "3ed688a48c9b9295e67f074a5d201f761af15f83a2e003e5d8fd6dd93c18a10a"
+                    },
+                    "aarch64": {
+                        "url": "https://aka.ms/download-jdk/microsoft-jdk-25.0.2-linux-aarch64.tar.gz"
+                    }
                 }
             },
             "21": {
                 "windows": {
-                    "x64": "https://aka.ms/download-jdk/microsoft-jdk-21.0.10-windows-x64.zip",
-                    "aarch64": "https://aka.ms/download-jdk/microsoft-jdk-21.0.10-windows-aarch64.zip"
+                    "x64": {
+                        "url": "https://aka.ms/download-jdk/microsoft-jdk-21.0.10-windows-x64.zip"
+                    },
+                    "aarch64": {
+                        "url": "https://aka.ms/download-jdk/microsoft-jdk-21.0.10-windows-aarch64.zip"
+                    }
                 },
                 "mac": {
-                    "x64": "https://aka.ms/download-jdk/microsoft-jdk-21.0.10-macos-x64.tar.gz",
-                    "aarch64": "https://aka.ms/download-jdk/microsoft-jdk-21.0.10-macos-aarch64.tar.gz"
+                    "x64": {
+                        "url": "https://aka.ms/download-jdk/microsoft-jdk-21.0.10-macos-x64.tar.gz"
+                    },
+                    "aarch64": {
+                        "url": "https://aka.ms/download-jdk/microsoft-jdk-21.0.10-macos-aarch64.tar.gz"
+                    }
                 },
                 "linux": {
-                    "x64": "https://aka.ms/download-jdk/microsoft-jdk-21.0.10-linux-x64.tar.gz",
-                    "aarch64": "https://aka.ms/download-jdk/microsoft-jdk-21.0.10-linux-aarch64.tar.gz"
+                    "x64": {
+                        "url": "https://aka.ms/download-jdk/microsoft-jdk-21.0.10-linux-x64.tar.gz"
+                    },
+                    "aarch64": {
+                        "url": "https://aka.ms/download-jdk/microsoft-jdk-21.0.10-linux-aarch64.tar.gz"
+                    }
                 }
             },
             "17": {
                 "windows": {
-                    "x64": "https://aka.ms/download-jdk/microsoft-jdk-17.0.18-windows-x64.zip",
-                    "aarch64": "https://aka.ms/download-jdk/microsoft-jdk-17.0.18-windows-aarch64.zip"
+                    "x64": {
+                        "url": "https://aka.ms/download-jdk/microsoft-jdk-17.0.18-windows-x64.zip"
+                    },
+                    "aarch64": {
+                        "url": "https://aka.ms/download-jdk/microsoft-jdk-17.0.18-windows-aarch64.zip"
+                    }
                 },
                 "mac": {
-                    "x64": "https://aka.ms/download-jdk/microsoft-jdk-17.0.18-macos-x64.tar.gz",
-                    "aarch64": "https://aka.ms/download-jdk/microsoft-jdk-17.0.18-macos-aarch64.tar.gz"
+                    "x64": {
+                        "url": "https://aka.ms/download-jdk/microsoft-jdk-17.0.18-macos-x64.tar.gz"
+                    },
+                    "aarch64": {
+                        "url": "https://aka.ms/download-jdk/microsoft-jdk-17.0.18-macos-aarch64.tar.gz"
+                    }
                 },
                 "linux": {
-                    "x64": "https://aka.ms/download-jdk/microsoft-jdk-17.0.18-linux-x64.tar.gz",
-                    "aarch64": "https://aka.ms/download-jdk/microsoft-jdk-17.0.18-linux-aarch64.tar.gz"
+                    "x64": {
+                        "url": "https://aka.ms/download-jdk/microsoft-jdk-17.0.18-linux-x64.tar.gz"
+                    },
+                    "aarch64": {
+                        "url": "https://aka.ms/download-jdk/microsoft-jdk-17.0.18-linux-aarch64.tar.gz"
+                    }
                 }
             },
             "11": {
                 "windows": {
-                    "x64": "https://aka.ms/download-jdk/microsoft-jdk-11.0.30-windows-x64.zip",
-                    "aarch64": "https://aka.ms/download-jdk/microsoft-jdk-11.0.30-windows-aarch64.zip"
+                    "x64": {
+                        "url": "https://aka.ms/download-jdk/microsoft-jdk-11.0.30-windows-x64.zip"
+                    },
+                    "aarch64": {
+                        "url": "https://aka.ms/download-jdk/microsoft-jdk-11.0.30-windows-aarch64.zip"
+                    }
                 },
                 "mac": {
-                    "x64": "https://aka.ms/download-jdk/microsoft-jdk-11.0.30-macos-x64.tar.gz",
-                    "aarch64": "https://aka.ms/download-jdk/microsoft-jdk-11.0.30-macos-aarch64.tar.gz"
+                    "x64": {
+                        "url": "https://aka.ms/download-jdk/microsoft-jdk-11.0.30-macos-x64.tar.gz"
+                    },
+                    "aarch64": {
+                        "url": "https://aka.ms/download-jdk/microsoft-jdk-11.0.30-macos-aarch64.tar.gz"
+                    }
                 },
                 "linux": {
-                    "x64": "https://aka.ms/download-jdk/microsoft-jdk-11.0.30-linux-x64.tar.gz",
-                    "aarch64": "https://aka.ms/download-jdk/microsoft-jdk-11.0.30-linux-aarch64.tar.gz"
+                    "x64": {
+                        "url": "https://aka.ms/download-jdk/microsoft-jdk-11.0.30-linux-x64.tar.gz"
+                    },
+                    "aarch64": {
+                        "url": "https://aka.ms/download-jdk/microsoft-jdk-11.0.30-linux-aarch64.tar.gz"
+                    }
                 }
             }
         },
         "zulu": {
-            "windows": {
-                "x64": "https://cdn.azul.com/zulu/bin/zulu21.48.17-ca-jdk21.0.10-win_x64.zip"
-            },
-            "mac": {
-                "aarch64": "https://cdn.azul.com/zulu/bin/zulu21.48.17-ca-jdk21.0.10-macosx_aarch64.tar.gz"
-            },
-            "linux": {
-                "x64": "https://cdn.azul.com/zulu/bin/zulu21.48.17-ca-jdk21.0.10-linux_x64.tar.gz"
+            "21": {
+                "windows": {
+                    "x64": {
+                        "url": "https://cdn.azul.com/zulu/bin/zulu21.48.17-ca-jdk21.0.10-win_x64.zip"
+                    },
+                    "aarch64": {
+                        "url": "https://cdn.azul.com/zulu/bin/zulu21.48.17-ca-jdk21.0.10-win_x64.zip"
+                    }
+                },
+                "mac": {
+                    "x64": {
+                        "url": "https://cdn.azul.com/zulu/bin/zulu21.48.17-ca-jdk21.0.10-macosx_x64.tar.gz"
+                    },
+                    "aarch64": {
+                        "url": "https://cdn.azul.com/zulu/bin/zulu21.48.17-ca-jdk21.0.10-macosx_aarch64.tar.gz"
+                    }
+                },
+                "linux": {
+                    "x64": {
+                        "url": "https://cdn.azul.com/zulu/bin/zulu21.48.17-ca-jdk21.0.10-linux_x64.tar.gz"
+                    },
+                    "aarch64": {
+                        "url": "https://cdn.azul.com/zulu/bin/zulu21.48.17-ca-jdk21.0.10-linux_aarch64.tar.gz"
+                    }
+                }
             }
         },
         "liberica": {
+            "25": {
+                "windows": {
+                    "x64": {
+                        "url": "https://download.bell-sw.com/java/25.0.2+12/bellsoft-jdk25.0.2+12-windows-amd64.zip"
+                    },
+                    "aarch64": {
+                        "url": "https://download.bell-sw.com/java/25.0.2+12/bellsoft-jdk25.0.2+12-windows-aarch64.zip"
+                    }
+                },
+                "mac": {
+                    "x64": {
+                        "url": "https://download.bell-sw.com/java/25.0.2+12/bellsoft-jdk25.0.2+12-macos-amd64.tar.gz"
+                    },
+                    "aarch64": {
+                        "url": "https://download.bell-sw.com/java/25.0.2+12/bellsoft-jdk25.0.2+12-macos-aarch64.tar.gz"
+                    }
+                },
+                "linux": {
+                    "x64": {
+                        "url": "https://download.bell-sw.com/java/25.0.2+12/bellsoft-jdk25.0.2+12-linux-amd64.tar.gz"
+                    },
+                    "aarch64": {
+                        "url": "https://download.bell-sw.com/java/25.0.2+12/bellsoft-jdk25.0.2+12-linux-aarch64.tar.gz"
+                    }
+                }
+            },
             "21": {
                 "windows": {
-                    "x64": "https://download.bell-sw.com/java/21.0.5+11/bellsoft-jdk21.0.5+11-windows-amd64.zip"
+                    "x64": {
+                        "url": "https://download.bell-sw.com/java/21.0.10+10/bellsoft-jdk21.0.10+10-windows-amd64.zip"
+                    },
+                    "aarch64": {
+                        "url": "https://download.bell-sw.com/java/21.0.10+10/bellsoft-jdk21.0.10+10-windows-aarch64.zip"
+                    }
+                },
+                "mac": {
+                    "x64": {
+                        "url": "https://download.bell-sw.com/java/21.0.10+10/bellsoft-jdk21.0.10+10-macos-amd64.tar.gz"
+                    },
+                    "aarch64": {
+                        "url": "https://download.bell-sw.com/java/21.0.10+10/bellsoft-jdk21.0.10+10-macos-aarch64.tar.gz"
+                    }
+                },
+                "linux": {
+                    "x64": {
+                        "url": "https://download.bell-sw.com/java/21.0.10+10/bellsoft-jdk21.0.10+10-linux-amd64.tar.gz"
+                    },
+                    "aarch64": {
+                        "url": "https://download.bell-sw.com/java/21.0.10+10/bellsoft-jdk21.0.10+10-linux-aarch64.tar.gz"
+                    }
+                }
+            },
+            "17": {
+                "windows": {
+                    "x64": {
+                        "url": "https://download.bell-sw.com/java/17.0.18+10/bellsoft-jdk17.0.18+10-windows-amd64.zip"
+                    },
+                    "aarch64": {
+                        "url": "https://download.bell-sw.com/java/17.0.18+10/bellsoft-jdk17.0.18+10-windows-aarch64.zip"
+                    }
+                },
+                "mac": {
+                    "x64": {
+                        "url": "https://download.bell-sw.com/java/17.0.18+10/bellsoft-jdk17.0.18+10-macos-amd64.tar.gz"
+                    },
+                    "aarch64": {
+                        "url": "https://download.bell-sw.com/java/17.0.18+10/bellsoft-jdk17.0.18+10-macos-aarch64.tar.gz"
+                    }
+                },
+                "linux": {
+                    "x64": {
+                        "url": "https://download.bell-sw.com/java/17.0.18+10/bellsoft-jdk17.0.18+10-linux-amd64.tar.gz"
+                    },
+                    "aarch64": {
+                        "url": "https://download.bell-sw.com/java/17.0.18+10/bellsoft-jdk17.0.18+10-linux-aarch64.tar.gz"
+                    }
+                }
+            },
+            "11": {
+                "windows": {
+                    "x64": {
+                        "url": "https://download.bell-sw.com/java/11.0.30+9/bellsoft-jdk11.0.30+9-windows-amd64.zip"
+                    },
+                    "aarch64": {
+                        "url": "https://download.bell-sw.com/java/11.0.30+9/bellsoft-jdk11.0.30+9-windows-aarch64.zip"
+                    }
+                },
+                "mac": {
+                    "x64": {
+                        "url": "https://download.bell-sw.com/java/11.0.30+9/bellsoft-jdk11.0.30+9-macos-amd64.tar.gz"
+                    },
+                    "aarch64": {
+                        "url": "https://download.bell-sw.com/java/11.0.30+9/bellsoft-jdk11.0.30+9-macos-aarch64.tar.gz"
+                    }
+                },
+                "linux": {
+                    "x64": {
+                        "url": "https://download.bell-sw.com/java/11.0.30+9/bellsoft-jdk11.0.30+9-linux-amd64.tar.gz"
+                    },
+                    "aarch64": {
+                        "url": "https://download.bell-sw.com/java/11.0.30+9/bellsoft-jdk11.0.30+9-linux-aarch64.tar.gz"
+                    }
+                }
+            },
+            "8": {
+                "windows": {
+                    "x64": {
+                        "url": "https://download.bell-sw.com/java/8u482+10/bellsoft-jdk8u482+10-windows-amd64.zip"
+                    }
+                },
+                "mac": {
+                    "x64": {
+                        "url": "https://download.bell-sw.com/java/8u482+10/bellsoft-jdk8u482+10-macos-amd64.tar.gz"
+                    },
+                    "aarch64": {
+                        "url": "https://download.bell-sw.com/java/8u482+10/bellsoft-jdk8u482+10-macos-aarch64.tar.gz"
+                    }
+                },
+                "linux": {
+                    "x64": {
+                        "url": "https://download.bell-sw.com/java/8u482+10/bellsoft-jdk8u482+10-linux-amd64.tar.gz"
+                    },
+                    "aarch64": {
+                        "url": "https://download.bell-sw.com/java/8u482+10/bellsoft-jdk8u482+10-linux-aarch64.tar.gz"
+                    }
                 }
             }
         }

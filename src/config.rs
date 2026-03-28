@@ -1,6 +1,7 @@
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
 use std::fs;
+use anyhow::{Context, Result};
 
 #[derive(Debug, Deserialize)]
 pub struct WorkspaceConfig {
@@ -53,14 +54,19 @@ pub struct Project {
 }
 
 impl SporaConfig {
-    pub fn load() -> Self {
+    pub fn load() -> Result<SporaConfig> {
         Self::load_from_path(std::path::Path::new("spora.toml"))
+            .context("spora.tomlの読み込みに失敗しました")
     }
 
-    pub fn load_from_path(path: &std::path::Path) -> Self {
+    pub fn load_from_path(path: &std::path::Path) -> Result<SporaConfig> {
         let content = fs::read_to_string(path)
-            .unwrap_or_else(|_| panic!("❌ {:?} が見つかりません。", path));
-        toml::from_str(&content).expect("❌ TOMLの解析に失敗しました。")
+            .with_context(|| format!("{:?} が見つかりません", path))?;
+
+        let toml: SporaConfig = toml::from_str(&content)
+            .context("TOMLの解析に失敗しました")?;
+
+        Ok(toml)
     }
 }
 

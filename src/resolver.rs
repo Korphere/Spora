@@ -6,6 +6,7 @@ use crate::store::SporaStore;
 use roxmltree::Document;
 use serde::{Deserialize, Serialize};
 use indicatif::{ProgressBar, ProgressStyle, MultiProgress};
+use anyhow::{Context, Result};
 
 #[derive(Serialize, Deserialize, Debug, Clone)]
 pub struct LockedDependency {

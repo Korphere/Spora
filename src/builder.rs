@@ -5,12 +5,13 @@ use crate::toolchain::Toolchain;
 use std::path::{Path};
 use walkdir::WalkDir;
 use sha2::{Sha256, Digest};
+use anyhow::{Context, Result};
 
 use crate::config::SporaConfig;
 pub struct Builder;
 
 impl Builder {
-    pub fn bloom(base_path: &Path, project_name: &str, lang: &str, _java_ver: &str, _kotlin_ver: &str, main_class: &str) {
+    pub fn bloom(base_path: &Path, project_name: &str, lang: &str, _java_ver: &str, _kotlin_ver: &str, main_class: &str) -> Result<()> {
         Logger::log_step("Compiling", project_name);
 
         let lang_dir = match lang {
@@ -24,21 +25,23 @@ impl Builder {
         let out_dir = base_path.join("out");
         let _fingerprint_path = base_path.join(".spora/fingerprints.json");
 
-        Self::copy_resources(&resource_dir, &out_dir);
+        Self::copy_resources(&resource_dir, &out_dir).context("リソースのコピーに失敗しました")?;
 
         let mut lib_fingerprints = HashMap::new();
 
         let mut classpath_elements = Vec::new();
 
-        // 2. libディレクトリ内のJARを追加
         if let Ok(entries) = fs::read_dir(&lib_dir) {
             for entry in entries.filter_map(|e| e.ok()) {
                 let path = entry.path();
                 if path.is_file() && path.extension().and_then(|s| s.to_str()) == Some("jar") {
                     classpath_elements.push(path.to_string_lossy().to_string());
                     
-                    let lib_name = path.file_name().unwrap().to_str().unwrap().to_string();
-                    let hash = Self::calculate_hash(&path);
+                    let lib_name = path.file_name()
+                        .and_then(|n| n.to_str())
+                        .context("不正なファイル名が含まれています")?
+                        .to_string();
+                    let hash = Self::calculate_hash(&path).context("ライブラリのハッシュ計算に失敗しました")?;
                     lib_fingerprints.insert(format!("lib:{}", lib_name), hash);
                 }
             }
@@ -51,7 +54,8 @@ impl Builder {
 
         fs::create_dir_all(out_dir.clone()).ok();
         
-        let fingerprints = Self::load_fingerprints(base_path);
+        let fingerprints = Self::load_fingerprints(base_path)
+            .context("フィンガープリントの読み込みに失敗しました")?;
         let mut new_fingerprints = HashMap::new();
         let mut needs_full_rebuild = false;
 
@@ -62,7 +66,8 @@ impl Builder {
             }
         }
 
-        let root_config = SporaConfig::load();
+        let root_config = SporaConfig::load()
+            .context("spora.tomlの読み込みに失敗しました")?;
         let runtime = root_config.runtime.as_ref().expect("Runtime config is required");
         let compiler_path = match lang {
             "java" => Toolchain::get_compiler_path("java", &runtime),
@@ -79,7 +84,7 @@ impl Builder {
                 
                 if path.is_file() && path.extension().map_or(false, |ext| ext == extension) {
                     let path_str = path.to_str().unwrap().to_string();
-                    let current_hash = Self::calculate_hash(path);
+                    let current_hash = Self::calculate_hash(path).context("ファイルのハッシュ計算に失敗しました")?;
                     
                     let relative_path = path.strip_prefix(&source_dir).expect("Failed to strip prefix");
                     let class_file = out_dir.join(relative_path).with_extension("class");
@@ -99,7 +104,7 @@ impl Builder {
 
         if source_files.is_empty() {
             Logger::log_success("Everything is up to date.");
-            return;
+            return Ok(());
         }
 
         println!("Compiling {} changed file(s)...", source_files.len());
@@ -111,16 +116,17 @@ impl Builder {
             cmd.arg(file);
         }
 
-        let status = cmd.status().expect("❌ コンパイラの実行に失敗しました。");
+        let status = cmd.status().context("コンパイラの実行に失敗しました。")?;
 
         if status.success() {
             Logger::log_success("Compilation successful");
-            Self::save_fingerprints(base_path, new_fingerprints);
-            Self::package(project_name, out_dir.clone().to_str().unwrap(), main_class);
+            Self::save_fingerprints(base_path, new_fingerprints).context("フィンガープリントの保存に失敗しました")?;
+            Self::package(project_name, out_dir.clone().to_str().unwrap(), main_class).context("パッケージに失敗しました")?;
         }
+        Ok(())
     }
 
-    fn package(name: &str, out_dir: &str, main_class: &str) {
+    fn package(name: &str, out_dir: &str, main_class: &str) -> Result<()> {
         Logger::log_step("Packaging", &format!("{}.jar", name));
         
         let jar_file = format!("{}.jar", name);
@@ -134,36 +140,39 @@ impl Builder {
             .arg(out_dir)
             .arg(".")
             .status()
-            .expect("❌ JARの作成に失敗しました。");
+            .context("JARの作成に失敗しました")?;
 
         if status.success() {
             Logger::log_success(&format!("Created {}.jar (Main: {})", name, main_class));
         }
+        Ok(())
     }
 
-    fn calculate_hash(path: &Path) -> String {
-        let content = fs::read(path).expect("Failed to read source file");
+    fn calculate_hash(path: &Path) -> Result<String> {
+        let mut file = fs::File::open(path)?;
         let mut hasher = Sha256::new();
-        hasher.update(content);
-        hex::encode(hasher.finalize())
+        std::io::copy(&mut file, &mut hasher)?;
+        Ok(hex::encode(hasher.finalize()))
     }
 
-    fn load_fingerprints(base_path: &Path) -> HashMap<String, String> {
+    fn load_fingerprints(base_path: &Path) -> Result<HashMap<String, String>> {
         let path = base_path.join(".spora/fingerprints.json");
-        if !path.exists() { return HashMap::new(); }
+        if !path.exists() { return Ok(HashMap::new()); }
         let content = fs::read_to_string(path).unwrap_or_else(|_| "{}".to_string());
-        serde_json::from_str(&content).unwrap_or_else(|_| HashMap::new())
+        Ok(serde_json::from_str(&content).unwrap_or_else(|_| HashMap::new()))
     }
 
-    fn save_fingerprints(base_path: &Path, fingerprints: HashMap<String, String>) {
+    fn save_fingerprints(base_path: &Path, fingerprints: HashMap<String, String>) -> Result<()> {
         let dot_spora = base_path.join(".spora");
         fs::create_dir_all(&dot_spora).ok();
         let content = serde_json::to_string_pretty(&fingerprints).unwrap();
-        fs::write(dot_spora.join("fingerprints.json"), content).expect("Failed to save fingerprints");
+        fs::write(dot_spora.join("fingerprints.json"), content)
+            .context("フィンガープリントの保存に失敗しました")?;
+        Ok(())
     }
 
-    fn copy_resources(res_src_dir: &Path, out_dir: &Path) {
-        if !res_src_dir.exists() { return; }
+    fn copy_resources(res_src_dir: &Path, out_dir: &Path) -> Result<()> {
+        if !res_src_dir.exists() { return Ok(()); }
         
         Logger::log_step("Copying", "resources...");
 
@@ -177,33 +186,34 @@ impl Builder {
                 fs::copy(path, &target_path).ok();
             }
         }
+        Ok(())
     }
 
-    pub fn is_lock_unchanged(project_root: &Path) -> bool {
+    pub fn is_lock_unchanged(project_root: &Path) -> Result<bool> {
         let lock_path = project_root.join("spora.lock");
         if !lock_path.exists() {
-            return false;
+            return Ok(false);
         }
 
-        let current_hash = Self::hash_file(&lock_path);
+        let current_hash = Self::hash_file(&lock_path).context("ハッシュ化するファイルの読み込みに失敗しました")?;
 
         let hash_storage = project_root.join(".spora/lock.hash");
         if hash_storage.exists() {
             let last_hash = fs::read_to_string(&hash_storage).unwrap_or_default();
             if current_hash == last_hash {
-                return true;
+                return Ok(true);
             }
         }
 
         fs::create_dir_all(project_root.join(".spora")).ok();
         fs::write(hash_storage, current_hash).ok();
-        false
+        Ok(false)
     }
 
-    pub fn hash_file(path: &Path) -> String {
-        let content = fs::read(path).expect("❌ Failed to read file for hashing");
+    pub fn hash_file(path: &Path) -> Result<String> {
+        let content = fs::read(path).context("ハッシュ化するファイルの読み込みに失敗しました")?;
         let mut hasher = Sha256::new();
         hasher.update(content);
-        hex::encode(hasher.finalize())
+        Ok(hex::encode(hasher.finalize()))
     }
 }

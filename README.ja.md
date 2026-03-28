@@ -4,13 +4,13 @@
 [![Version](https://img.shields.io/github/v/release/Korphere/Spora)](https://github.com/Korphere/Spora/releases)
 [![Rust](https://img.shields.io/badge/rust-2021-orange.svg)](https://www.rust-lang.org/)
 
-**Spora** (スポラ) は、JavaおよびKotlinプロジェクトのための、軽量で宣言的なツールチェーンマネージャーです。
+**Spora** (スポラ) は、JVM言語を用いるプロジェクトのための、軽量なツールチェーンマネージャーです。
 プロジェクトごとに最適なJDKベンダーとバージョンを自動的に取得し、開発環境のセットアップを自動化します。
 
 ## ✨ 特徴
 
 - **Zero-Setup**: `spora.toml` を書くだけで、必要なJDKが自動的にダウンロード・配置されます。
-- **マルチベンダー対応**: Temurin, Microsoft, Corretto, Oracle, Zulu 等をサポート。
+- **マルチベンダー対応**: Temurin, Microsoft, Corretto, Oracle, Zulu, Liberica 等をサポート。
 - **カタログ同期**: GitHub上の最新カタログと同期し、常に最新のマイナーアップデートを追跡。
 - **Rust製**: 爆速な動作と、最小限の依存関係。
 

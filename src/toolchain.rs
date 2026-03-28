@@ -8,6 +8,8 @@ use crate::config::RuntimeConfig;
 use crate::logger::Logger;
 use std::io::{self, Seek, SeekFrom};
 use reqwest::redirect::Policy as RedirectPolicy;
+use sha2::{Sha256, Digest};
+
 pub struct Toolchain;
 
 impl Toolchain {
@@ -108,7 +110,7 @@ impl Toolchain {
             },
             ("java", v) => {
                 let catalog = Self::fetch_catalog().expect("Failed to fetch remote version catalog. Check your internet connection.");
-                catalog["java"][v][major_version][os][arch]
+                catalog["java"][v][major_version][os][arch]["url"]
                     .as_str()
                     .expect(&format!("Version {} for {} on {}/{} is not defined in Spora catalog.", major_version, v, os, arch))
                     .to_string()
@@ -131,6 +133,23 @@ impl Toolchain {
 
         let mut tmp_file = tempfile::tempfile().expect("Failed to create temp file");
         io::copy(&mut response, &mut tmp_file).expect("Failed to save download");
+
+        if let ("java", v) = (lang, vendor) {
+            let catalog = Self::fetch_catalog().ok();
+            if let Some(cat) = catalog {
+                if let Some(expected_hash) = cat["java"][v][major_version][os][arch]["sha256"].as_str() {
+                    let actual_hash = Self::calculate_hash(&mut tmp_file).expect("Hash calculation failed");
+                    
+                    if actual_hash.to_lowercase() != expected_hash.to_lowercase() {
+                        panic!(
+                            "Checksum mismatch!\nExpected: {}\nActual:   {}",
+                            expected_hash, actual_hash
+                        );
+                    }
+                    Logger::log_success("Checksum verified");
+                }
+            }
+        }
 
         tmp_file.seek(SeekFrom::Start(0)).expect("Failed to seek to start of temp file");
 
@@ -181,11 +200,19 @@ impl Toolchain {
         let json: Value = res.json()?;
         Ok(json)
     }
+
+    fn calculate_hash(file: &mut fs::File) -> io::Result<String> {
+        file.seek(SeekFrom::Start(0))?;
+        let mut hasher = Sha256::new();
+        io::copy(file, &mut hasher)?;
+        file.seek(SeekFrom::Start(0))?;
+        Ok(hex::encode(hasher.finalize()))
+    }
 }
 
 #[cfg(test)]
 mod tests {
-use super::*;
+    use super::*;
     use serde_json::Value;
 
     #[test]

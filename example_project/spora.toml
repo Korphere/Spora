@@ -5,10 +5,11 @@ version = "0.1.0"
 main = "Main"
 
 [toolchain]
-java = "21"
+java = "25"
 
 [runtime]
-vendor = "zulu"
-version = "21"
+vendor = "liberica"
+version = "25"
 
 [dependencies]
+"com.google.code.gson:gson" = "2.10.1"
