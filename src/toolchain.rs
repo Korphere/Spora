@@ -6,6 +6,7 @@ use flate2::read::GzDecoder;
 use tar::Archive;
 use crate::config::RuntimeConfig;
 use crate::logger::Logger;
+use crate::platform::Platform;
 use std::io::{self, Seek, SeekFrom};
 use reqwest::redirect::Policy as RedirectPolicy;
 use sha2::{Sha256, Digest};
@@ -66,11 +67,9 @@ impl Toolchain {
             .build()
             .expect("Failed to build HTTP client");
 
-        let os = if cfg!(target_os = "windows") { "windows" } 
-                    else if cfg!(target_os = "macos") { "mac" } 
-                    else { "linux" };
-        
-        let arch = if cfg!(target_arch = "x86_64") { "x64" } else { "aarch64" };
+        let platform = Platform::current();
+        let os = platform.os;
+        let arch = platform.arch;
         let _ext = if cfg!(target_os = "windows") { "zip" } else { "tar.gz" };
 
         let vendor = runtime.vendor.as_str();
@@ -78,14 +77,6 @@ impl Toolchain {
         let major_version = runtime.version.split('.').next().unwrap_or("21");
 
         let url = match (lang, vendor) {
-            ("java", "temurin") => {
-                format!(
-                    "https://api.adoptium.net/v3/binary/latest/{}/ga/{}/{}/jdk/hotspot/normal/adoptium",
-                    major_version,
-                    os,
-                    arch
-                )
-            },
             ("java", "corretto") => {
                 let corretto_os = match os {
                     "windows" => "x64-windows-jdk.zip",

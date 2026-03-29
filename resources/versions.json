@@ -4,14 +4,17 @@
             "25": {
                 "windows": {
                     "x64": {
+                        "url": "https://api.adoptium.net/v3/binary/latest/25/ga/windows/x64/jdk/hotspot/normal/adoptium",
                         "sha256": "06ac5f5444a1269dd11d11cbb7ab6ebaecedc60dc1caca82cdb56f29100b7b8c"
                     }
                 },
                 "mac": {
                     "x64": {
+                        "url": "https://api.adoptium.net/v3/binary/latest/25/ga/mac/x64/jdk/hotspot/normal/adoptium",
                         "sha256": "7caddeb2d1d06a21487fdf55198349f122ba7b24bfc613b8923a42a133a92dc5"
                     },
                     "aarch64": {
+                        "url": "https://api.adoptium.net/v3/binary/latest/25/ga/mac/aarch64/jdk/hotspot/normal/adoptium",
                         "sha256": "74ff6e892924a49767c35eb61251b1969c03213819d51065d9b8f9e0238c4f97"
                     }
                 },
@@ -21,6 +24,15 @@
                     },
                     "aarch64": {
                         "sha256": "a9d73e711d967dc44896d4f430f73a68fd33590dabc29a7f2fb9f593425b854c"
+                    },
+                    "s390x": {
+                        "sha256": "15e5cbcadcf3d43623c31b825063cdc2817b9f1ba840b51dc6ef70e5d33c84e3"
+                    },
+                    "riscv64": {
+                        "sha256": "168119e4fba350f4e6b3ca92450a2b90a8502b89a235a04415e9adf9f5d3164e"
+                    },
+                    "ppc64le": {
+                        "sha256": "b262b735b215173003766da36588d5f717dceada0286db41b439f93fb2ada468"
                     }
                 }
             },
@@ -51,13 +63,66 @@
                 }
             },
             "17": {
-
+                "windows": {
+                    "x64": {
+                        "sha256": "c24e6215fa75f861d2a900ceec67c620cd2eb6dfb81541087d5981293b16f0e5"
+                    }
+                },
+                "mac": {
+                    "x64": {
+                        "sha256": "47c2a8a62d6ba44bf46f2e468f9b3f26ad4b0bf6a51544e29c4520c18e709744"
+                    },
+                    "aarch64": {
+                        "sha256": "d81de06d938384fe76c4aa3c13395933aa11e2d19b0428743f810db06b05e312"
+                    }
+                },
+                "linux": {
+                    "x64": {
+                        "sha256": "0c94cbb54325c40dcf026143eb621562017db5525727f2d9131a11250f72c450"
+                    },
+                    "aarch64": {
+                        "sha256": "592a6702b3a07a0e0b82cb38aaab149bfce1b0c24d6b57ddb410bd9009333095"
+                    }
+                }
             },
             "11": {
-
+                "windows": {
+                    "x64": {
+                        "sha256": "925a63cb019fd605579e639980e99abefb3186e79f36979183dc45b294d6bf0f"
+                    }
+                },
+                "mac": {
+                    "x64": {
+                        "sha256": "bb080059fdd02b61f8348f6b4d0878b8d33da0ebff9a6860e2497e4c5b8ee682"
+                    },
+                    "aarch64": {
+                        "sha256": "d7b52d25d6f7aae2d4d85191d84bc132b80d061006dcd5f76ca79f277c3acb28"
+                    }
+                },
+                "linux": {
+                    "x64": {
+                        "sha256": "1911fa4010d59985d4cba9f4295c704ae64d08dfc3c2d5747bbc18655b1e911a"
+                    },
+                    "aarch64": {
+                        "sha256": "3c8fb6754deced4e08a03524b6af1df4f3df451f1832f3dcd3a6848fd54b8d08"
+                    }
+                }
             },
             "8": {
 
+            }
+        },
+        "corretto": {
+            "21": {
+                "windows": {
+
+                },
+                "mac": {
+
+                },
+                "linux": {
+                    
+                }
             }
         },
         "microsoft": {

@@ -4,6 +4,7 @@ mod resolver;
 mod builder;
 mod toolchain;
 mod logger;
+mod platform;
 
 use config::SporaConfig;
 use resolver::{Resolver, MavenCoords};
@@ -28,7 +29,7 @@ fn main() {
     }
 }
 
-fn resolve_deps(config: &SporaConfig, resolver: &Resolver, path: &Path) {
+fn resolve_deps(config: &SporaConfig, resolver: &Resolver, path: &Path) -> Result<()> {
     config.dependencies.par_iter().for_each(|(name, dep)| {
         let (version, repo_url) = match dep {
             DependencyConfig::Simple(v) => (v.clone(), None),
@@ -37,14 +38,16 @@ fn resolve_deps(config: &SporaConfig, resolver: &Resolver, path: &Path) {
 
         let full_coords = format!("{}:{}", name, version);
         if let Some(coords) = MavenCoords::parse(&full_coords) {
-            resolver.resolve_recursive(&coords, repo_url, path);
+            resolver.resolve_recursive(&coords, repo_url, path).expect("Failed to resolve");
         }
     });
+    Ok(())
 }
 
 fn perform_fetch(root_config: &SporaConfig, resolver: &Resolver, project_root: &Path) -> Result<()>{
     Logger::log_step("Fetching", "dependencies...");
-    if resolver.resolve_from_lock(project_root) {
+    let rfl = resolver.resolve_from_lock(project_root).context("Failed to resolve from lock")?;
+    if rfl {
         Logger::log_success("Dependencies restored from spora.lock");
     } else {
         if let Some(ws) = &root_config.workspace {
@@ -54,13 +57,13 @@ fn perform_fetch(root_config: &SporaConfig, resolver: &Resolver, project_root: &
                 if config_path.exists() {
                     let m_config = SporaConfig::load_from_path(&config_path)
                         .context(format!("Failed to load {:?}", config_path))?;
-                    resolve_deps(&m_config, resolver, member_path);
+                    resolve_deps(&m_config, resolver, member_path)?;
                 }
             }
         } else {
-            resolve_deps(root_config, resolver, project_root);
+            resolve_deps(root_config, resolver, project_root)?;
         }
-        resolver.save_lock(project_root);
+        resolver.save_lock(project_root)?;
         Logger::log_success("Dependencies resolved and locked");
     }
     Ok(())

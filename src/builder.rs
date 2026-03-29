@@ -55,7 +55,7 @@ impl Builder {
         fs::create_dir_all(out_dir.clone()).ok();
         
         let fingerprints = Self::load_fingerprints(base_path)
-            .context("フィンガープリントの読み込みに失敗しました")?;
+            .context("Failed to load fingerprints")?;
         let mut new_fingerprints = HashMap::new();
         let mut needs_full_rebuild = false;
 
@@ -67,7 +67,7 @@ impl Builder {
         }
 
         let root_config = SporaConfig::load()
-            .context("spora.tomlの読み込みに失敗しました")?;
+            .context("Failed to load spora.toml")?;
         let runtime = root_config.runtime.as_ref().expect("Runtime config is required");
         let compiler_path = match lang {
             "java" => Toolchain::get_compiler_path("java", &runtime),
