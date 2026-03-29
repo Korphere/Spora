@@ -25,7 +25,7 @@ impl Builder {
         let out_dir = base_path.join("out");
         let _fingerprint_path = base_path.join(".spora/fingerprints.json");
 
-        Self::copy_resources(&resource_dir, &out_dir).context("リソースのコピーに失敗しました")?;
+        Self::copy_resources(&resource_dir, &out_dir).context("Failed to copy resources")?;
 
         let mut lib_fingerprints = HashMap::new();
 
@@ -39,9 +39,9 @@ impl Builder {
                     
                     let lib_name = path.file_name()
                         .and_then(|n| n.to_str())
-                        .context("不正なファイル名が含まれています")?
+                        .context("Contains invalid filenames")?
                         .to_string();
-                    let hash = Self::calculate_hash(&path).context("ライブラリのハッシュ計算に失敗しました")?;
+                    let hash = Self::calculate_hash(&path).context("Failed to calculate hash of library")?;
                     lib_fingerprints.insert(format!("lib:{}", lib_name), hash);
                 }
             }
@@ -84,7 +84,7 @@ impl Builder {
                 
                 if path.is_file() && path.extension().map_or(false, |ext| ext == extension) {
                     let path_str = path.to_str().unwrap().to_string();
-                    let current_hash = Self::calculate_hash(path).context("ファイルのハッシュ計算に失敗しました")?;
+                    let current_hash = Self::calculate_hash(path).context("Failed to calculate hash")?;
                     
                     let relative_path = path.strip_prefix(&source_dir).expect("Failed to strip prefix");
                     let class_file = out_dir.join(relative_path).with_extension("class");
@@ -107,7 +107,7 @@ impl Builder {
             return Ok(());
         }
 
-        println!("Compiling {} changed file(s)...", source_files.len());
+        Logger::log_step("Compiling", &format!("{} changed file(s)...", source_files.len()));
 
         let mut cmd = Command::new(compiler_path);
         cmd.arg("-cp").arg(classpath).arg("-d").arg(&out_dir);
@@ -116,12 +116,12 @@ impl Builder {
             cmd.arg(file);
         }
 
-        let status = cmd.status().context("コンパイラの実行に失敗しました。")?;
+        let status = cmd.status().context("Failed to run compiler")?;
 
         if status.success() {
             Logger::log_success("Compilation successful");
-            Self::save_fingerprints(base_path, new_fingerprints).context("フィンガープリントの保存に失敗しました")?;
-            Self::package(project_name, out_dir.clone().to_str().unwrap(), main_class).context("パッケージに失敗しました")?;
+            Self::save_fingerprints(base_path, new_fingerprints).context("Failed to save fingerprints")?;
+            Self::package(project_name, out_dir.clone().to_str().unwrap(), main_class).context("Failed to package")?;
         }
         Ok(())
     }
@@ -140,7 +140,7 @@ impl Builder {
             .arg(out_dir)
             .arg(".")
             .status()
-            .context("JARの作成に失敗しました")?;
+            .context("Failed to create JAR")?;
 
         if status.success() {
             Logger::log_success(&format!("Created {}.jar (Main: {})", name, main_class));
@@ -167,7 +167,7 @@ impl Builder {
         fs::create_dir_all(&dot_spora).ok();
         let content = serde_json::to_string_pretty(&fingerprints).unwrap();
         fs::write(dot_spora.join("fingerprints.json"), content)
-            .context("フィンガープリントの保存に失敗しました")?;
+            .context("Failed to save fingerprints")?;
         Ok(())
     }
 
@@ -195,7 +195,7 @@ impl Builder {
             return Ok(false);
         }
 
-        let current_hash = Self::hash_file(&lock_path).context("ハッシュ化するファイルの読み込みに失敗しました")?;
+        let current_hash = Self::hash_file(&lock_path).context("Failed to load file to hash")?;
 
         let hash_storage = project_root.join(".spora/lock.hash");
         if hash_storage.exists() {
@@ -211,7 +211,7 @@ impl Builder {
     }
 
     pub fn hash_file(path: &Path) -> Result<String> {
-        let content = fs::read(path).context("ハッシュ化するファイルの読み込みに失敗しました")?;
+        let content = fs::read(path).context("Failed to load file to hash")?;
         let mut hasher = Sha256::new();
         hasher.update(content);
         Ok(hex::encode(hasher.finalize()))

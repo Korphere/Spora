@@ -1,6 +1,6 @@
 # Spora 🌿
 
-![SporaLogo](https://github.com/Korphere/Spora/tree/main/resources/logo.png "SporaLogo")
+![SporaLogo](https://github.com/Korphere/Spora/blob/main/resources/logo.png "SporaLogo")
 
 [![License: MIT/Apache-2.0](https://img.shields.io/badge/license-MIT%2FApache--2.0-blue.svg)](LICENSE-MIT)
 [![Version](https://img.shields.io/github/v/release/Korphere/Spora)](https://github.com/Korphere/Spora/releases)

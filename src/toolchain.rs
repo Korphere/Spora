@@ -76,42 +76,7 @@ impl Toolchain {
 
         let major_version = runtime.version.split('.').next().unwrap_or("21");
 
-        let url = match (lang, vendor) {
-            ("java", "corretto") => {
-                let corretto_os = match os {
-                    "windows" => "x64-windows-jdk.zip",
-                    "mac" => if arch == "x64" { "x64-macos-jdk.tar.gz" } else { "aarch64-macos-jdk.tar.gz" },
-                    _ => "x64-linux-jdk.tar.gz",
-                };
-                format!("https://corretto.aws/downloads/latest/amazon-corretto-{}-{}", major_version, corretto_os)
-            },
-            ("java", "oracle") => {
-                if !runtime.accept_oracle_licence_terms.unwrap_or(false) {
-                    Logger::log_error("Oracle JDK requires license acceptance.");
-                    println!("             Please set 'accept_oracle_licence_terms = true' in spora.toml");
-                    std::process::exit(1);
-                }
-                let oracle_os = match os {
-                    "windows" => "windows-x64_bin.zip",
-                    "mac" => "macos-aarch64_bin.tar.gz",
-                    _ => "linux-x64_bin.tar.gz",
-                };
-                format!("https://download.oracle.com/java/{}/archive/jdk-{}_{}", 
-                    major_version, runtime.version, oracle_os)
-            },
-            ("java", v) => {
-                let catalog = Self::fetch_catalog().expect("Failed to fetch remote version catalog. Check your internet connection.");
-                catalog["java"][v][major_version][os][arch]["url"]
-                    .as_str()
-                    .expect(&format!("Version {} for {} on {}/{} is not defined in Spora catalog.", major_version, v, os, arch))
-                    .to_string()
-            },
-            ("kotlin", _) => {
-                format!("https://github.com/JetBrains/kotlin/releases/download/v{}/kotlin-compiler-{}.zip", 
-                    runtime.version, runtime.version)
-            },
-            _ => panic!("Vendor {} for {} is not supported.", runtime.vendor, lang),
-        };
+        let url = Toolchain::get_url_by_lang_and_vendor(lang, vendor, major_version, os, arch, runtime);
 
         Logger::log_step("Download", &url);
         let mut response = client.get(&url).send().expect("Download failed");
@@ -198,6 +163,38 @@ impl Toolchain {
         io::copy(file, &mut hasher)?;
         file.seek(SeekFrom::Start(0))?;
         Ok(hex::encode(hasher.finalize()))
+    }
+
+    fn get_url_by_lang_and_vendor(lang: &str, vendor: &str, major_version: &str, os: &str, arch: &str, runtime: &RuntimeConfig) -> String {
+        let url = match (lang, vendor) {
+            ("java", "oracle") => {
+                if !runtime.accept_oracle_licence_terms.unwrap_or(false) {
+                    Logger::log_error("Oracle JDK requires license acceptance.");
+                    println!("             Please set 'accept_oracle_licence_terms = true' in spora.toml");
+                    std::process::exit(1);
+                }
+                let oracle_os = match os {
+                    "windows" => "windows-x64_bin.zip",
+                    "mac" => "macos-aarch64_bin.tar.gz",
+                    _ => "linux-x64_bin.tar.gz",
+                };
+                format!("https://download.oracle.com/java/{}/archive/jdk-{}_{}", 
+                    major_version, runtime.version, oracle_os)
+            },
+            ("java", v) => {
+                let catalog = Self::fetch_catalog().expect("Failed to fetch remote version catalog. Check your internet connection.");
+                catalog["java"][v][major_version][os][arch]["url"]
+                    .as_str()
+                    .expect(&format!("Version {} for {} on {}/{} is not defined in Spora catalog.", major_version, v, os, arch))
+                    .to_string()
+            },
+            ("kotlin", _) => {
+                format!("https://github.com/JetBrains/kotlin/releases/download/v{}/kotlin-compiler-{}.zip", 
+                    runtime.version, runtime.version)
+            },
+            _ => panic!("Vendor {} for {} is not supported.", runtime.vendor, lang),
+        };
+        url
     }
 }
 

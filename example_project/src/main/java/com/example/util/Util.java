@@ -1,9 +1,9 @@
 package com.example.util;
 
 public class Util {
-    private String a;
-    public Util() {
-        this.a = "";
-        System.out.println(a);
+    public static JsonObject getNewJsonObject(){
+        JsonObject json = new JsonObject();
+        json.addProperty("foo", "baa");
+        return json;
     }
 }

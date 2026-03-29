@@ -8,7 +8,7 @@ main = "Main"
 java = "25"
 
 [runtime]
-vendor = "liberica"
+vendor = "temurin"
 version = "25"
 
 [dependencies]
