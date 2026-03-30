@@ -25,8 +25,10 @@ pub struct PackConfig {
 
 #[derive(Debug, Deserialize, Serialize, Clone)]
 pub struct RuntimeConfig {
+    pub lang: String, // "java", "kotlin"
     pub vendor: String, // "temurin", "corretto", "zulu", "microsoft", "oracle"
     pub version: String,
+    pub platform: Option<String>, /// "jvm", "native"
     pub checksum: Option<String>,
     pub auto_verify: Option<bool>,
     pub accept_oracle_licence_terms: Option<bool>, // When using Oracle JDK, due to licensing requirements, you must explicitly set this option to true.

@@ -73,10 +73,13 @@ impl Toolchain {
         let _ext = if cfg!(target_os = "windows") { "zip" } else { "tar.gz" };
 
         let vendor = runtime.vendor.as_str();
-
         let major_version = runtime.version.split('.').next().unwrap_or("21");
+        let runtime_platform = match &runtime.platform {
+            Some(p) => p.as_str(),
+            None => "jvm"
+        };
 
-        let url = Toolchain::get_url_by_lang_and_vendor(lang, vendor, major_version, os, arch, runtime);
+        let url = Toolchain::get_url_by_lang_and_vendor(lang, vendor, major_version, os, arch, runtime_platform, runtime);
 
         Logger::log_step("Download", &url);
         let mut response = client.get(&url).send().expect("Download failed");
@@ -90,20 +93,22 @@ impl Toolchain {
         let mut tmp_file = tempfile::tempfile().expect("Failed to create temp file");
         io::copy(&mut response, &mut tmp_file).expect("Failed to save download");
 
-        if let ("java", v) = (lang, vendor) {
-            let catalog = Self::fetch_catalog().ok();
-            if let Some(cat) = catalog {
-                if let Some(expected_hash) = cat["java"][v][major_version][os][arch]["sha256"].as_str() {
-                    let actual_hash = Self::calculate_hash(&mut tmp_file).expect("Hash calculation failed");
-                    
-                    if actual_hash.to_lowercase() != expected_hash.to_lowercase() {
-                        panic!(
-                            "Checksum mismatch!\nExpected: {}\nActual:   {}",
-                            expected_hash, actual_hash
-                        );
-                    }
-                    Logger::log_success("Checksum verified");
+        if let Some(cat) = Self::fetch_catalog().ok() {
+            let expected_hash = cat.get(lang)
+                .and_then(|l| l.get(runtime_platform))
+                .and_then(|p| p.get(vendor))
+                .and_then(|v| v.get(&runtime.version).or_else(|| v.get(major_version)))
+                .and_then(|ver| ver.get(os))
+                .and_then(|o| o.get(arch))
+                .and_then(|a| a.get("sha256"))
+                .and_then(|s| s.as_str());
+
+            if let Some(expected) = expected_hash {
+                let actual_hash = Self::calculate_hash(&mut tmp_file).expect("Hash calculation failed");
+                if actual_hash.to_lowercase() != expected.to_lowercase() {
+                    panic!("Checksum mismatch!\nExpected: {}\nActual:   {}", expected, actual_hash);
                 }
+                Logger::log_success("Checksum verified");
             }
         }
 
@@ -121,10 +126,8 @@ impl Toolchain {
                     fs::create_dir_all(&p).map_err(|e| println!("Dir error: {:?}", e)).ok(); 
                 }
                 if (*file.name()).ends_with('/') {
-                    // If directory
                     fs::create_dir_all(&outpath).ok();
                 } else {
-                    // If file
                     if let Some(p) = outpath.parent() {
                         fs::create_dir_all(&p).ok();
                     }
@@ -165,36 +168,32 @@ impl Toolchain {
         Ok(hex::encode(hasher.finalize()))
     }
 
-    fn get_url_by_lang_and_vendor(lang: &str, vendor: &str, major_version: &str, os: &str, arch: &str, runtime: &RuntimeConfig) -> String {
-        let url = match (lang, vendor) {
-            ("java", "oracle") => {
-                if !runtime.accept_oracle_licence_terms.unwrap_or(false) {
-                    Logger::log_error("Oracle JDK requires license acceptance.");
-                    println!("             Please set 'accept_oracle_licence_terms = true' in spora.toml");
-                    std::process::exit(1);
-                }
-                let oracle_os = match os {
-                    "windows" => "windows-x64_bin.zip",
-                    "mac" => "macos-aarch64_bin.tar.gz",
-                    _ => "linux-x64_bin.tar.gz",
-                };
-                format!("https://download.oracle.com/java/{}/archive/jdk-{}_{}", 
-                    major_version, runtime.version, oracle_os)
-            },
-            ("java", v) => {
-                let catalog = Self::fetch_catalog().expect("Failed to fetch remote version catalog. Check your internet connection.");
-                catalog["java"][v][major_version][os][arch]["url"]
-                    .as_str()
-                    .expect(&format!("Version {} for {} on {}/{} is not defined in Spora catalog.", major_version, v, os, arch))
-                    .to_string()
-            },
-            ("kotlin", _) => {
-                format!("https://github.com/JetBrains/kotlin/releases/download/v{}/kotlin-compiler-{}.zip", 
+fn get_url_by_lang_and_vendor(lang: &str, vendor: &str, major_version: &str, os: &str, arch: &str, platform: &str, runtime: &RuntimeConfig) -> String {
+        let catalog = Self::fetch_catalog().expect("Failed to fetch version catalog.");
+
+        if lang == "java" && vendor == "oracle" && !runtime.accept_oracle_licence_terms.unwrap_or(false) {
+            Logger::log_error("Oracle JDK requires license acceptance.");
+            println!("             Please set 'accept_oracle_licence_terms = true' in spora.toml");
+            std::process::exit(1);
+        }
+
+        let catalog_url = catalog.get(lang)
+            .and_then(|l| l.get(platform))
+            .and_then(|p| p.get(vendor))
+            .and_then(|v| v.get(&runtime.version).or_else(|| v.get(major_version)))
+            .and_then(|ver| ver.get(os))
+            .and_then(|o| o.get(arch))
+            .and_then(|a| a.get("url"))
+            .and_then(|u| u.as_str());
+
+        if let Some(url) = catalog_url {
+            url.to_string()
+        } else if lang == "kotlin" && platform == "jvm" {
+            format!("https://github.com/JetBrains/kotlin/releases/download/v{}/kotlin-compiler-{}.zip", 
                     runtime.version, runtime.version)
-            },
-            _ => panic!("Vendor {} for {} is not supported.", runtime.vendor, lang),
-        };
-        url
+        } else {
+            panic!("Version/Vendor not supported or defined in catalog: {} {} ({})", lang, vendor, platform);
+        }
     }
 }
 
@@ -202,6 +201,8 @@ impl Toolchain {
 mod tests {
     use super::*;
     use serde_json::Value;
+    use std::io::Read;
+    use colored::*;
 
     #[test]
     #[ignore]
@@ -245,6 +246,122 @@ mod tests {
             }
             _ => {}
         }
+    }
+
+    #[test]
+    #[ignore]
+    fn test_catalog_integrity() {
+        let catalog = Toolchain::fetch_catalog().expect("Failed to fetch catalog");
+        let client = reqwest::blocking::Client::builder()
+            .user_agent("Spora-Validator/0.1.2")
+            .timeout(std::time::Duration::from_secs(300))
+            .build()
+            .unwrap();
+
+        println!("Starting strict integrity check (sha256)...");
+        validate_integrity_recursive(&catalog, &client);
+    }
+    
+    #[test]
+    fn test_catalog_structure() {
+        check_sections(&Toolchain::fetch_catalog().expect("Failed to fetch catalog"));
+    }
+
+    fn validate_integrity_recursive(value: &Value, client: &reqwest::blocking::Client) {
+        match value {
+            Value::Object(map) => {
+                if let Some(url) = map.get("url").and_then(|v| v.as_str()) {
+                    let expected_sha = map.get("sha256").and_then(|v| v.as_str());
+
+                    match expected_sha {
+                        Some(expected) => {
+                            print!("Verifying: {} ... ", url);
+                            std::io::Write::flush(&mut std::io::stdout()).ok();
+
+                            let mut resp = client.get(url).send().expect("Failed to send request");
+                            assert!(resp.status().is_success(), "Download failed for {}", url);
+
+                            let mut hasher = Sha256::new();
+                            let mut buffer = Vec::new();
+                            resp.read_to_end(&mut buffer).expect("Failed to read body");
+                            hasher.update(&buffer);
+                            let actual = hex::encode(hasher.finalize());
+
+                            assert_eq!(
+                                actual.to_lowercase(),
+                                expected.to_lowercase(),
+                                "\nChecksum mismatch for URL: {}", url
+                            );
+                            println!("{}", "OK".green().bold());
+                        }
+                        None => {
+                            println!("Skipping: {} (No sha256 defined)", url);
+                        }
+                    }
+                } else {
+                    for v in map.values() {
+                        validate_integrity_recursive(v, client);
+                    }
+                }
+            }
+            Value::Array(arr) => {
+                for v in arr {
+                    validate_integrity_recursive(v, client);
+                }
+            }
+            _ => {}
+        }
+    }
+
+    fn check_sections(catalog: &Value) {
+        assert!(catalog.get("java").is_some(), "Catalog must have 'java' section");
+        assert!(catalog.get("kotlin").is_some(), "Catalog must have 'kotlin' section");
+
+        println!("Successfully validated local versions.json structure.");
+    }
+
+    fn load_local_catalog() -> Value {
+        let mut path = PathBuf::from(env!("CARGO_MANIFEST_DIR"));
+        path.push("resources");
+        path.push("versions.json");
+
+        let content = fs::read_to_string(&path)
+            .expect(&format!("Failed to read local catalog at {:?}", path));
+        
+        serde_json::from_str(&content)
+            .expect("Failed to parse local versions.json as valid JSON")
+    }
+
+    #[test]
+    #[ignore]
+    fn test_local_catalog_urls_reachability() {
+        let catalog = load_local_catalog();
+        let client = reqwest::blocking::Client::builder()
+            .user_agent("Spora-Validator/0.1.2")
+            .timeout(std::time::Duration::from_secs(20))
+            .build()
+            .unwrap();
+
+        validate_urls(&catalog, &client);
+    }
+
+    #[test]
+    #[ignore]
+    fn test_local_catalog_integrity() {
+        let catalog = load_local_catalog();
+        let client = reqwest::blocking::Client::builder()
+            .user_agent("Spora-Validator/0.1.2")
+            .timeout(std::time::Duration::from_secs(300))
+            .build()
+            .unwrap();
+
+        println!("Starting strict integrity check (sha256)...");
+        validate_integrity_recursive(&catalog, &client);
+    }
+
+    #[test]
+    fn test_local_catalog_structure() {
+        check_sections(&load_local_catalog());
     }
 
     #[test]

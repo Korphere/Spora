@@ -1,797 +1,1266 @@
 {
     "java": {
-        "temurin": {
-            "25": {
-                "windows": {
-                    "x64": {
-                        "url": "https://api.adoptium.net/v3/binary/latest/25/ga/windows/x64/jdk/hotspot/normal/adoptium",
-                        "sha256": "06ac5f5444a1269dd11d11cbb7ab6ebaecedc60dc1caca82cdb56f29100b7b8c"
+        "jvm": {
+            "temurin": {
+                "25": {
+                    "windows": {
+                        "x64": {
+                            "url": "https://api.adoptium.net/v3/binary/latest/25/ga/windows/x64/jdk/hotspot/normal/adoptium",
+                            "sha256": "06ac5f5444a1269dd11d11cbb7ab6ebaecedc60dc1caca82cdb56f29100b7b8c"
+                        }
+                    },
+                    "macos": {
+                        "x64": {
+                            "url": "https://api.adoptium.net/v3/binary/latest/25/ga/mac/x64/jdk/hotspot/normal/adoptium",
+                            "sha256": "7caddeb2d1d06a21487fdf55198349f122ba7b24bfc613b8923a42a133a92dc5"
+                        },
+                        "aarch64": {
+                            "url": "https://api.adoptium.net/v3/binary/latest/25/ga/mac/aarch64/jdk/hotspot/normal/adoptium",
+                            "sha256": "74ff6e892924a49767c35eb61251b1969c03213819d51065d9b8f9e0238c4f97"
+                        }
+                    },
+                    "linux": {
+                        "x64": {
+                            "url": "https://api.adoptium.net/v3/binary/latest/25/ga/linux/x64/jdk/hotspot/normal/adoptium",
+                            "sha256": "987387933b64b9833846dee373b640440d3e1fd48a04804ec01a6dbf718e8ab8"
+                        },
+                        "aarch64": {
+                            "url": "https://api.adoptium.net/v3/binary/latest/25/ga/linux/aarch64/jdk/hotspot/normal/adoptium",
+                            "sha256": "a9d73e711d967dc44896d4f430f73a68fd33590dabc29a7f2fb9f593425b854c"
+                        },
+                        "s390x": {
+                            "url": "https://api.adoptium.net/v3/binary/latest/25/ga/linux/s390x/jdk/hotspot/normal/adoptium",
+                            "sha256": "15e5cbcadcf3d43623c31b825063cdc2817b9f1ba840b51dc6ef70e5d33c84e3"
+                        },
+                        "riscv64": {
+                            "url": "https://api.adoptium.net/v3/binary/latest/25/ga/linux/riscv64/jdk/hotspot/normal/adoptium",
+                            "sha256": "168119e4fba350f4e6b3ca92450a2b90a8502b89a235a04415e9adf9f5d3164e"
+                        },
+                        "ppc64le": {
+                            "url": "https://api.adoptium.net/v3/binary/latest/25/ga/linux/ppc64le/jdk/hotspot/normal/adoptium",
+                            "sha256": "b262b735b215173003766da36588d5f717dceada0286db41b439f93fb2ada468"
+                        }
+                    },
+                    "linux-musl": {
+                        "x64": {
+                            "url": "https://api.adoptium.net/v3/binary/latest/25/ga/alpine-linux/x64/jdk/hotspot/normal/adoptium"
+                        },
+                        "aarch64": {
+                            "url": "https://api.adoptium.net/v3/binary/latest/25/ga/alpine-linux/aarch64/jdk/hotspot/normal/adoptium"
+                        }
                     }
                 },
-                "macos": {
-                    "x64": {
-                        "url": "https://api.adoptium.net/v3/binary/latest/25/ga/mac/x64/jdk/hotspot/normal/adoptium",
-                        "sha256": "7caddeb2d1d06a21487fdf55198349f122ba7b24bfc613b8923a42a133a92dc5"
+                "21": {
+                    "windows": {
+                        "x64": {
+                            "url": "https://api.adoptium.net/v3/binary/latest/21/ga/windows/x64/jdk/hotspot/normal/adoptium",
+                            "sha256": "08cae782814f027f8b159d6b68823f0f87422eb475c1a0ea1abc7a4357aaf11f"
+                        },
+                        "aarch64": {
+                            "url": "https://api.adoptium.net/v3/binary/latest/21/ga/windows/aarch64/jdk/hotspot/normal/adoptium",
+                            "sha256": "0e1f016cd74c05ab4fe2b2a839f6439e3dc516c9bb201bfb75d12b3fb2a63334"
+                        }
                     },
-                    "aarch64": {
-                        "url": "https://api.adoptium.net/v3/binary/latest/25/ga/mac/aarch64/jdk/hotspot/normal/adoptium",
-                        "sha256": "74ff6e892924a49767c35eb61251b1969c03213819d51065d9b8f9e0238c4f97"
+                    "macos": {
+                        "x64": {
+                            "url": "https://api.adoptium.net/v3/binary/latest/21/ga/mac/x64/jdk/hotspot/normal/adoptium",
+                            "sha256": "7484d5d4cdb02fc17a842ab86ddac2524a0365066659c46b2e258c64152379cd"
+                        },
+                        "aarch64": {
+                            "url": "https://api.adoptium.net/v3/binary/latest/21/ga/mac/aarch64/jdk/hotspot/normal/adoptium",
+                            "sha256": "01ca390455216ca27bdddf8cfad51aaedb4f90e1e23aad9bfd9e90caaa2c5f1b"
+                        }
+                    },
+                    "linux": {
+                        "x64": {
+                            "url": "https://api.adoptium.net/v3/binary/latest/21/ga/linux/x64/jdk/hotspot/normal/adoptium",
+                            "sha256": "ea3b9bd464d6dd253e9a7accf59f7ccd2a36e4aa69640b7251e3370caef896a4"
+                        },
+                        "aarch64": {
+                            "url": "https://api.adoptium.net/v3/binary/latest/21/ga/linux/aarch64/jdk/hotspot/normal/adoptium",
+                            "sha256": "357fee29fb0d5c079f6730db98b28942df13a6eed426f6c61cd4ad703ab27b9a"
+                        },
+                        "s390x": {
+                            "url": "https://api.adoptium.net/v3/binary/latest/21/ga/linux/s390x/jdk/hotspot/normal/adoptium",
+                            "sha256": "15e5cbcadcf3d43623c31b825063cdc2817b9f1ba840b51dc6ef70e5d33c84e3"
+                        },
+                        "riscv64": {
+                            "url": "https://api.adoptium.net/v3/binary/latest/21/ga/linux/riscv64/jdk/hotspot/normal/adoptium",
+                            "sha256": "168119e4fba350f4e6b3ca92450a2b90a8502b89a235a04415e9adf9f5d3164e"
+                        },
+                        "ppc64le": {
+                            "url": "https://api.adoptium.net/v3/binary/latest/21/ga/linux/ppc64le/jdk/hotspot/normal/adoptium",
+                            "sha256": "b262b735b215173003766da36588d5f717dceada0286db41b439f93fb2ada468"
+                        }
+                    },
+                    "linux-musl": {
+                        "x64": {
+                            "url": "https://api.adoptium.net/v3/binary/latest/21/ga/alpine-linux/x64/jdk/hotspot/normal/adoptium"
+                        },
+                        "aarch64": {
+                            "url": "https://api.adoptium.net/v3/binary/latest/21/ga/alpine-linux/aarch64/jdk/hotspot/normal/adoptium"
+                        }
                     }
                 },
-                "linux": {
-                    "x64": {
-                        "url": "https://api.adoptium.net/v3/binary/latest/25/ga/linux/x64/jdk/hotspot/normal/adoptium",
-                        "sha256": "987387933b64b9833846dee373b640440d3e1fd48a04804ec01a6dbf718e8ab8"
+                "17": {
+                    "windows": {
+                        "x64": {
+                            "url": "https://api.adoptium.net/v3/binary/latest/17/ga/windows/x64/jdk/hotspot/normal/adoptium",
+                            "sha256": "c24e6215fa75f861d2a900ceec67c620cd2eb6dfb81541087d5981293b16f0e5"
+                        }
                     },
-                    "aarch64": {
-                        "url": "https://api.adoptium.net/v3/binary/latest/25/ga/linux/aarch64/jdk/hotspot/normal/adoptium",
-                        "sha256": "a9d73e711d967dc44896d4f430f73a68fd33590dabc29a7f2fb9f593425b854c"
+                    "macos": {
+                        "x64": {
+                            "url": "https://api.adoptium.net/v3/binary/latest/17/ga/mac/x64/jdk/hotspot/normal/adoptium",
+                            "sha256": "47c2a8a62d6ba44bf46f2e468f9b3f26ad4b0bf6a51544e29c4520c18e709744"
+                        },
+                        "aarch64": {
+                            "url": "https://api.adoptium.net/v3/binary/latest/17/ga/mac/aarch64/jdk/hotspot/normal/adoptium",
+                            "sha256": "d81de06d938384fe76c4aa3c13395933aa11e2d19b0428743f810db06b05e312"
+                        }
                     },
-                    "s390x": {
-                        "url": "https://api.adoptium.net/v3/binary/latest/25/ga/linux/s390x/jdk/hotspot/normal/adoptium",
-                        "sha256": "15e5cbcadcf3d43623c31b825063cdc2817b9f1ba840b51dc6ef70e5d33c84e3"
+                    "linux": {
+                        "x64": {
+                            "url": "https://api.adoptium.net/v3/binary/latest/17/ga/linux/x64/jdk/hotspot/normal/adoptium",
+                            "sha256": "0c94cbb54325c40dcf026143eb621562017db5525727f2d9131a11250f72c450"
+                        },
+                        "aarch64": {
+                            "url": "https://api.adoptium.net/v3/binary/latest/17/ga/linux/aarch64/jdk/hotspot/normal/adoptium",
+                            "sha256": "592a6702b3a07a0e0b82cb38aaab149bfce1b0c24d6b57ddb410bd9009333095"
+                        },
+                        "s390x": {
+                            "url": "https://api.adoptium.net/v3/binary/latest/17/ga/linux/s390x/jdk/hotspot/normal/adoptium",
+                            "sha256": "15e5cbcadcf3d43623c31b825063cdc2817b9f1ba840b51dc6ef70e5d33c84e3"
+                        },
+                        "riscv64": {
+                            "url": "https://api.adoptium.net/v3/binary/latest/17/ga/linux/riscv64/jdk/hotspot/normal/adoptium",
+                            "sha256": "168119e4fba350f4e6b3ca92450a2b90a8502b89a235a04415e9adf9f5d3164e"
+                        },
+                        "ppc64le": {
+                            "url": "https://api.adoptium.net/v3/binary/latest/17/ga/linux/ppc64le/jdk/hotspot/normal/adoptium",
+                            "sha256": "b262b735b215173003766da36588d5f717dceada0286db41b439f93fb2ada468"
+                        },
+                        "arm": {
+                            "url": "https://api.adoptium.net/v3/binary/latest/17/ga/linux/arm/jdk/hotspot/normal/adoptium"
+                        }
                     },
-                    "riscv64": {
-                        "url": "https://api.adoptium.net/v3/binary/latest/25/ga/linux/riscv64/jdk/hotspot/normal/adoptium",
-                        "sha256": "168119e4fba350f4e6b3ca92450a2b90a8502b89a235a04415e9adf9f5d3164e"
-                    },
-                    "ppc64le": {
-                        "url": "https://api.adoptium.net/v3/binary/latest/25/ga/linux/ppc64le/jdk/hotspot/normal/adoptium",
-                        "sha256": "b262b735b215173003766da36588d5f717dceada0286db41b439f93fb2ada468"
+                    "linux-musl": {
+                        "x64": {
+                            "url": "https://api.adoptium.net/v3/binary/latest/17/ga/alpine-linux/x64/jdk/hotspot/normal/adoptium"
+                        }
                     }
                 },
-                "linux-musl": {
-                    "x64": {
-                        "url": "https://api.adoptium.net/v3/binary/latest/25/ga/alpine-linux/x64/jdk/hotspot/normal/adoptium"
+                "11": {
+                    "windows": {
+                        "x64": {
+                            "url": "https://api.adoptium.net/v3/binary/latest/11/ga/windows/x64/jdk/hotspot/normal/adoptium",
+                            "sha256": "925a63cb019fd605579e639980e99abefb3186e79f36979183dc45b294d6bf0f"
+                        }
                     },
-                    "aarch64": {
-                        "url": "https://api.adoptium.net/v3/binary/latest/25/ga/alpine-linux/aarch64/jdk/hotspot/normal/adoptium"
+                    "macos": {
+                        "x64": {
+                            "url": "https://api.adoptium.net/v3/binary/latest/11/ga/mac/x64/jdk/hotspot/normal/adoptium",
+                            "sha256": "bb080059fdd02b61f8348f6b4d0878b8d33da0ebff9a6860e2497e4c5b8ee682"
+                        },
+                        "aarch64": {
+                            "url": "https://api.adoptium.net/v3/binary/latest/11/ga/mac/aarch64/jdk/hotspot/normal/adoptium",
+                            "sha256": "d7b52d25d6f7aae2d4d85191d84bc132b80d061006dcd5f76ca79f277c3acb28"
+                        }
+                    },
+                    "linux": {
+                        "x64": {
+                            "url": "https://api.adoptium.net/v3/binary/latest/11/ga/linux/x64/jdk/hotspot/normal/adoptium",
+                            "sha256": "1911fa4010d59985d4cba9f4295c704ae64d08dfc3c2d5747bbc18655b1e911a"
+                        },
+                        "aarch64": {
+                            "url": "https://api.adoptium.net/v3/binary/latest/11/ga/linux/aarch64/jdk/hotspot/normal/adoptium",
+                            "sha256": "3c8fb6754deced4e08a03524b6af1df4f3df451f1832f3dcd3a6848fd54b8d08"
+                        },
+                        "s390x": {
+                            "url": "https://api.adoptium.net/v3/binary/latest/11/ga/linux/s390x/jdk/hotspot/normal/adoptium",
+                            "sha256": "15e5cbcadcf3d43623c31b825063cdc2817b9f1ba840b51dc6ef70e5d33c84e3"
+                        },
+                        "ppc64le": {
+                            "url": "https://api.adoptium.net/v3/binary/latest/11/ga/linux/ppc64le/jdk/hotspot/normal/adoptium",
+                            "sha256": "b262b735b215173003766da36588d5f717dceada0286db41b439f93fb2ada468"
+                        },
+                        "arm": {
+                            "url": "https://api.adoptium.net/v3/binary/latest/11/ga/linux/ppc64le/jdk/hotspot/normal/adoptium"
+                        }
+                    },
+                    "linux-musl": {
+                        "x64": {
+                            "url": "https://api.adoptium.net/v3/binary/latest/11/ga/alpine-linux/x64/jdk/hotspot/normal/adoptium"
+                        }
+                    }
+                },
+                "8": {
+                    "windows": {
+                        "x64": {
+                            "url": "https://api.adoptium.net/v3/binary/latest/8/ga/windows/x64/jdk/hotspot/normal/adoptium",
+                            "sha256": "925a63cb019fd605579e639980e99abefb3186e79f36979183dc45b294d6bf0f"
+                        }
+                    },
+                    "macos": {
+                        "x64": {
+                            "url": "https://api.adoptium.net/v3/binary/latest/8/ga/mac/x64/jdk/hotspot/normal/adoptium",
+                            "sha256": "bb080059fdd02b61f8348f6b4d0878b8d33da0ebff9a6860e2497e4c5b8ee682"
+                        }
+                    },
+                    "linux": {
+                        "x64": {
+                            "url": "https://api.adoptium.net/v3/binary/latest/8/ga/linux/x64/jdk/hotspot/normal/adoptium",
+                            "sha256": "1911fa4010d59985d4cba9f4295c704ae64d08dfc3c2d5747bbc18655b1e911a"
+                        },
+                        "aarch64": {
+                            "url": "https://api.adoptium.net/v3/binary/latest/8/ga/linux/aarch64/jdk/hotspot/normal/adoptium",
+                            "sha256": "3c8fb6754deced4e08a03524b6af1df4f3df451f1832f3dcd3a6848fd54b8d08"
+                        },
+                        "ppc64le": {
+                            "url": "https://api.adoptium.net/v3/binary/latest/8/ga/linux/ppc64le/jdk/hotspot/normal/adoptium",
+                            "sha256": "b262b735b215173003766da36588d5f717dceada0286db41b439f93fb2ada468"
+                        }
+                    },
+                    "linux-musl": {
+                        "x64": {
+                            "url": "https://api.adoptium.net/v3/binary/latest/8/ga/alpine-linux/x64/jdk/hotspot/normal/adoptium"
+                        }
                     }
                 }
             },
-            "21": {
-                "windows": {
-                    "x64": {
-                        "url": "https://api.adoptium.net/v3/binary/latest/21/ga/windows/x64/jdk/hotspot/normal/adoptium",
-                        "sha256": "08cae782814f027f8b159d6b68823f0f87422eb475c1a0ea1abc7a4357aaf11f"
+            "corretto": {
+                "25": {
+                    "windows": {
+                        "x64": {
+                            "url": "https://corretto.aws/downloads/latest/amazon-corretto-25-x64-windows-jdk.zip"
+                        }
                     },
-                    "aarch64": {
-                        "url": "https://api.adoptium.net/v3/binary/latest/21/ga/windows/aarch64/jdk/hotspot/normal/adoptium",
-                        "sha256": "0e1f016cd74c05ab4fe2b2a839f6439e3dc516c9bb201bfb75d12b3fb2a63334"
+                    "macos": {
+                        "x64": {
+                            "url": "https://corretto.aws/downloads/latest/amazon-corretto-25-x64-macos-jdk.tar.gz"
+                        },
+                        "aarch64": {
+                            "url": "https://corretto.aws/downloads/latest/amazon-corretto-25-aarch64-macos-jdk.tar.gz"
+                        }
+                    },
+                    "linux": {
+                        "x64": {
+                            "url": "https://corretto.aws/downloads/latest/amazon-corretto-25-x64-linux-jdk.tar.gz"
+                        },
+                        "aarch64": {
+                            "url": "https://corretto.aws/downloads/latest/amazon-corretto-25-aarch64-linux-jdk.tar.gz"
+                        }
                     }
                 },
-                "macos": {
-                    "x64": {
-                        "url": "https://api.adoptium.net/v3/binary/latest/21/ga/mac/x64/jdk/hotspot/normal/adoptium",
-                        "sha256": "7484d5d4cdb02fc17a842ab86ddac2524a0365066659c46b2e258c64152379cd"
+                "21": {
+                    "windows": {
+                        "x64": {
+                            "url": "https://corretto.aws/downloads/latest/amazon-corretto-21-x64-windows-jdk.zip"
+                        }
                     },
-                    "aarch64": {
-                        "url": "https://api.adoptium.net/v3/binary/latest/21/ga/mac/aarch64/jdk/hotspot/normal/adoptium",
-                        "sha256": "01ca390455216ca27bdddf8cfad51aaedb4f90e1e23aad9bfd9e90caaa2c5f1b"
+                    "macos": {
+                        "x64": {
+                            "url": "https://corretto.aws/downloads/latest/amazon-corretto-21-x64-macos-jdk.tar.gz"
+                        },
+                        "aarch64": {
+                            "url": "https://corretto.aws/downloads/latest/amazon-corretto-21-aarch64-macos-jdk.tar.gz"
+                        }
+                    },
+                    "linux": {
+                        "x64": {
+                            "url": "https://corretto.aws/downloads/latest/amazon-corretto-21-x64-linux-jdk.tar.gz"
+                        },
+                        "aarch64": {
+                            "url": "https://corretto.aws/downloads/latest/amazon-corretto-21-aarch64-linux-jdk.tar.gz"
+                        }
                     }
                 },
-                "linux": {
-                    "x64": {
-                        "url": "https://api.adoptium.net/v3/binary/latest/21/ga/linux/x64/jdk/hotspot/normal/adoptium",
-                        "sha256": "ea3b9bd464d6dd253e9a7accf59f7ccd2a36e4aa69640b7251e3370caef896a4"
+                "17": {
+                    "windows": {
+                        "x64": {
+                            "url": "https://corretto.aws/downloads/latest/amazon-corretto-17-x64-windows-jdk.zip"
+                        }
                     },
-                    "aarch64": {
-                        "url": "https://api.adoptium.net/v3/binary/latest/21/ga/linux/aarch64/jdk/hotspot/normal/adoptium",
-                        "sha256": "357fee29fb0d5c079f6730db98b28942df13a6eed426f6c61cd4ad703ab27b9a"
+                    "macos": {
+                        "x64": {
+                            "url": "https://corretto.aws/downloads/latest/amazon-corretto-17-x64-macos-jdk.tar.gz"
+                        },
+                        "aarch64": {
+                            "url": "https://corretto.aws/downloads/latest/amazon-corretto-17-aarch64-macos-jdk.tar.gz"
+                        }
                     },
-                    "s390x": {
-                        "url": "https://api.adoptium.net/v3/binary/latest/21/ga/linux/s390x/jdk/hotspot/normal/adoptium",
-                        "sha256": "15e5cbcadcf3d43623c31b825063cdc2817b9f1ba840b51dc6ef70e5d33c84e3"
-                    },
-                    "riscv64": {
-                        "url": "https://api.adoptium.net/v3/binary/latest/21/ga/linux/riscv64/jdk/hotspot/normal/adoptium",
-                        "sha256": "168119e4fba350f4e6b3ca92450a2b90a8502b89a235a04415e9adf9f5d3164e"
-                    },
-                    "ppc64le": {
-                        "url": "https://api.adoptium.net/v3/binary/latest/21/ga/linux/ppc64le/jdk/hotspot/normal/adoptium",
-                        "sha256": "b262b735b215173003766da36588d5f717dceada0286db41b439f93fb2ada468"
+                    "linux": {
+                        "x64": {
+                            "url": "https://corretto.aws/downloads/latest/amazon-corretto-17-x64-linux-jdk.tar.gz"
+                        },
+                        "aarch64": {
+                            "url": "https://corretto.aws/downloads/latest/amazon-corretto-17-aarch64-linux-jdk.tar.gz"
+                        }
                     }
                 },
-                "linux-musl": {
-                    "x64": {
-                        "url": "https://api.adoptium.net/v3/binary/latest/21/ga/alpine-linux/x64/jdk/hotspot/normal/adoptium"
+                "11": {
+                    "windows": {
+                        "x64": {
+                            "url": "https://corretto.aws/downloads/latest/amazon-corretto-11-x64-windows-jdk.zip"
+                        }
                     },
-                    "aarch64": {
-                        "url": "https://api.adoptium.net/v3/binary/latest/21/ga/alpine-linux/aarch64/jdk/hotspot/normal/adoptium"
+                    "macos": {
+                        "x64": {
+                            "url": "https://corretto.aws/downloads/latest/amazon-corretto-11-x64-macos-jdk.tar.gz"
+                        },
+                        "aarch64": {
+                            "url": "https://corretto.aws/downloads/latest/amazon-corretto-11-aarch64-macos-jdk.tar.gz"
+                        }
+                    },
+                    "linux": {
+                        "x64": {
+                            "url": "https://corretto.aws/downloads/latest/amazon-corretto-11-x64-linux-jdk.tar.gz"
+                        },
+                        "aarch64": {
+                            "url": "https://corretto.aws/downloads/latest/amazon-corretto-11-aarch64-linux-jdk.tar.gz"
+                        }
+                    }
+                },
+                "8": {
+                    "windows": {
+                        "x64": {
+                            "url": "https://corretto.aws/downloads/latest/amazon-corretto-8-x64-windows-jdk.zip"
+                        }
+                    },
+                    "macos": {
+                        "x64": {
+                            "url": "https://corretto.aws/downloads/latest/amazon-corretto-8-x64-macos-jdk.tar.gz"
+                        },
+                        "aarch64": {
+                            "url": "https://corretto.aws/downloads/latest/amazon-corretto-8-aarch64-macos-jdk.tar.gz"
+                        }
+                    },
+                    "linux": {
+                        "x64": {
+                            "url": "https://corretto.aws/downloads/latest/amazon-corretto-8-x64-linux-jdk.tar.gz"
+                        },
+                        "aarch64": {
+                            "url": "https://corretto.aws/downloads/latest/amazon-corretto-8-aarch64-linux-jdk.tar.gz"
+                        }
                     }
                 }
             },
-            "17": {
-                "windows": {
-                    "x64": {
-                        "url": "https://api.adoptium.net/v3/binary/latest/17/ga/windows/x64/jdk/hotspot/normal/adoptium",
-                        "sha256": "c24e6215fa75f861d2a900ceec67c620cd2eb6dfb81541087d5981293b16f0e5"
+            "microsoft": {
+                "25.0.2": {
+                    "windows": {
+                        "x64": {
+                            "url": "https://aka.ms/download-jdk/microsoft-jdk-25.0.2-windows-x64.zip",
+                            "sha256": "38d1a42d189c50b24152014ef131931f25f4cc80400ce618f0477f5e4e5aa252"
+                        },
+                        "aarch64": {
+                            "url": "https://aka.ms/download-jdk/microsoft-jdk-25.0.2-windows-aarch64.zip",
+                            "sha256": "e0d9380cf3d0b5efc675664fa0db22cc9eb5d77c4fd2a132f4b58df0608593cf"
+                        }
+                    },
+                    "macos": {
+                        "x64": {
+                            "url": "https://aka.ms/download-jdk/microsoft-jdk-25.0.2-macos-x64.tar.gz",
+                            "sha256": "6bc02fd3182dee12510f253d08eeac342a1f0e03d7f4114763f83d8722e2915e"
+                        },
+                        "aarch64": {
+                            "url": "https://aka.ms/download-jdk/microsoft-jdk-25.0.2-macos-aarch64.tar.gz",
+                            "sha256": "0bface8af5ceea3bf8b7eec6d38f1a68b68b60db5ea14eb2a1bd9767cf971fed"
+                        }
+                    },
+                    "linux": {
+                        "x64": {
+                            "url": "https://aka.ms/download-jdk/microsoft-jdk-25.0.2-linux-x64.tar.gz",
+                            "sha256": "3ed688a48c9b9295e67f074a5d201f761af15f83a2e003e5d8fd6dd93c18a10a"
+                        },
+                        "aarch64": {
+                            "url": "https://aka.ms/download-jdk/microsoft-jdk-25.0.2-linux-aarch64.tar.gz",
+                            "sha256": "bdc5fffc0d1e741ab7840b8e733fca48b70d1b6838db4d90b94a78b90e6ea8cb"
+                        }
                     }
                 },
-                "macos": {
-                    "x64": {
-                        "url": "https://api.adoptium.net/v3/binary/latest/17/ga/mac/x64/jdk/hotspot/normal/adoptium",
-                        "sha256": "47c2a8a62d6ba44bf46f2e468f9b3f26ad4b0bf6a51544e29c4520c18e709744"
+                "25.0.1": {
+                    "windows": {
+                        "x64": {
+                            "url": "https://aka.ms/download-jdk/microsoft-jdk-25.0.1-windows-x64.zip",
+                            "sha256": "38d1a42d189c50b24152014ef131931f25f4cc80400ce618f0477f5e4e5aa252"
+                        },
+                        "aarch64": {
+                            "url": "https://aka.ms/download-jdk/microsoft-jdk-25.0.1-windows-aarch64.zip",
+                            "sha256": "e0d9380cf3d0b5efc675664fa0db22cc9eb5d77c4fd2a132f4b58df0608593cf"
+                        }
                     },
-                    "aarch64": {
-                        "url": "https://api.adoptium.net/v3/binary/latest/17/ga/mac/aarch64/jdk/hotspot/normal/adoptium",
-                        "sha256": "d81de06d938384fe76c4aa3c13395933aa11e2d19b0428743f810db06b05e312"
+                    "macos": {
+                        "x64": {
+                            "url": "https://aka.ms/download-jdk/microsoft-jdk-25.0.1-macos-x64.tar.gz",
+                            "sha256": "6bc02fd3182dee12510f253d08eeac342a1f0e03d7f4114763f83d8722e2915e"
+                        },
+                        "aarch64": {
+                            "url": "https://aka.ms/download-jdk/microsoft-jdk-25.0.1-macos-aarch64.tar.gz",
+                            "sha256": "0bface8af5ceea3bf8b7eec6d38f1a68b68b60db5ea14eb2a1bd9767cf971fed"
+                        }
+                    },
+                    "linux": {
+                        "x64": {
+                            "url": "https://aka.ms/download-jdk/microsoft-jdk-25.0.1-linux-x64.tar.gz",
+                            "sha256": "3ed688a48c9b9295e67f074a5d201f761af15f83a2e003e5d8fd6dd93c18a10a"
+                        },
+                        "aarch64": {
+                            "url": "https://aka.ms/download-jdk/microsoft-jdk-25.0.1-linux-aarch64.tar.gz",
+                            "sha256": "bdc5fffc0d1e741ab7840b8e733fca48b70d1b6838db4d90b94a78b90e6ea8cb"
+                        }
                     }
                 },
-                "linux": {
-                    "x64": {
-                        "url": "https://api.adoptium.net/v3/binary/latest/17/ga/linux/x64/jdk/hotspot/normal/adoptium",
-                        "sha256": "0c94cbb54325c40dcf026143eb621562017db5525727f2d9131a11250f72c450"
+                "25.0.0": {
+                    "windows": {
+                        "x64": {
+                            "url": "https://aka.ms/download-jdk/microsoft-jdk-25.0.0-windows-x64.zip",
+                            "sha256": "38d1a42d189c50b24152014ef131931f25f4cc80400ce618f0477f5e4e5aa252"
+                        },
+                        "aarch64": {
+                            "url": "https://aka.ms/download-jdk/microsoft-jdk-25.0.0-windows-aarch64.zip",
+                            "sha256": "e0d9380cf3d0b5efc675664fa0db22cc9eb5d77c4fd2a132f4b58df0608593cf"
+                        }
                     },
-                    "aarch64": {
-                        "url": "https://api.adoptium.net/v3/binary/latest/17/ga/linux/aarch64/jdk/hotspot/normal/adoptium",
-                        "sha256": "592a6702b3a07a0e0b82cb38aaab149bfce1b0c24d6b57ddb410bd9009333095"
+                    "macos": {
+                        "x64": {
+                            "url": "https://aka.ms/download-jdk/microsoft-jdk-25.0.0-macos-x64.tar.gz",
+                            "sha256": "6bc02fd3182dee12510f253d08eeac342a1f0e03d7f4114763f83d8722e2915e"
+                        },
+                        "aarch64": {
+                            "url": "https://aka.ms/download-jdk/microsoft-jdk-25.0.0-macos-aarch64.tar.gz",
+                            "sha256": "0bface8af5ceea3bf8b7eec6d38f1a68b68b60db5ea14eb2a1bd9767cf971fed"
+                        }
                     },
-                    "s390x": {
-                        "url": "https://api.adoptium.net/v3/binary/latest/17/ga/linux/s390x/jdk/hotspot/normal/adoptium",
-                        "sha256": "15e5cbcadcf3d43623c31b825063cdc2817b9f1ba840b51dc6ef70e5d33c84e3"
-                    },
-                    "riscv64": {
-                        "url": "https://api.adoptium.net/v3/binary/latest/17/ga/linux/riscv64/jdk/hotspot/normal/adoptium",
-                        "sha256": "168119e4fba350f4e6b3ca92450a2b90a8502b89a235a04415e9adf9f5d3164e"
-                    },
-                    "ppc64le": {
-                        "url": "https://api.adoptium.net/v3/binary/latest/17/ga/linux/ppc64le/jdk/hotspot/normal/adoptium",
-                        "sha256": "b262b735b215173003766da36588d5f717dceada0286db41b439f93fb2ada468"
-                    },
-                    "arm": {
-                        "url": "https://api.adoptium.net/v3/binary/latest/17/ga/linux/arm/jdk/hotspot/normal/adoptium"
+                    "linux": {
+                        "x64": {
+                            "url": "https://aka.ms/download-jdk/microsoft-jdk-25.0.0-linux-x64.tar.gz",
+                            "sha256": "3ed688a48c9b9295e67f074a5d201f761af15f83a2e003e5d8fd6dd93c18a10a"
+                        },
+                        "aarch64": {
+                            "url": "https://aka.ms/download-jdk/microsoft-jdk-25.0.0-linux-aarch64.tar.gz",
+                            "sha256": "bdc5fffc0d1e741ab7840b8e733fca48b70d1b6838db4d90b94a78b90e6ea8cb"
+                        }
                     }
                 },
-                "linux-musl": {
-                    "x64": {
-                        "url": "https://api.adoptium.net/v3/binary/latest/17/ga/alpine-linux/x64/jdk/hotspot/normal/adoptium"
+                "25": {
+                    "windows": {
+                        "x64": {
+                            "url": "https://aka.ms/download-jdk/microsoft-jdk-25.0.1-windows-x64.zip",
+                            "sha256": "38d1a42d189c50b24152014ef131931f25f4cc80400ce618f0477f5e4e5aa252"
+                        },
+                        "aarch64": {
+                            "url": "https://aka.ms/download-jdk/microsoft-jdk-25.0.1-windows-aarch64.zip",
+                            "sha256": "e0d9380cf3d0b5efc675664fa0db22cc9eb5d77c4fd2a132f4b58df0608593cf"
+                        }
+                    },
+                    "macos": {
+                        "x64": {
+                            "url": "https://aka.ms/download-jdk/microsoft-jdk-25.0.1-macos-x64.tar.gz",
+                            "sha256": "6bc02fd3182dee12510f253d08eeac342a1f0e03d7f4114763f83d8722e2915e"
+                        },
+                        "aarch64": {
+                            "url": "https://aka.ms/download-jdk/microsoft-jdk-25.0.1-macos-aarch64.tar.gz",
+                            "sha256": "0bface8af5ceea3bf8b7eec6d38f1a68b68b60db5ea14eb2a1bd9767cf971fed"
+                        }
+                    },
+                    "linux": {
+                        "x64": {
+                            "url": "https://aka.ms/download-jdk/microsoft-jdk-25.0.1-linux-x64.tar.gz",
+                            "sha256": "3ed688a48c9b9295e67f074a5d201f761af15f83a2e003e5d8fd6dd93c18a10a"
+                        },
+                        "aarch64": {
+                            "url": "https://aka.ms/download-jdk/microsoft-jdk-25.0.1-linux-aarch64.tar.gz",
+                            "sha256": "bdc5fffc0d1e741ab7840b8e733fca48b70d1b6838db4d90b94a78b90e6ea8cb"
+                        }
+                    }
+                },
+                "21.0.10": {
+                    "windows": {
+                        "x64": {
+                            "url": "https://aka.ms/download-jdk/microsoft-jdk-21.0.10-windows-x64.zip"
+                        },
+                        "aarch64": {
+                            "url": "https://aka.ms/download-jdk/microsoft-jdk-21.0.10-windows-aarch64.zip"
+                        }
+                    },
+                    "macos": {
+                        "x64": {
+                            "url": "https://aka.ms/download-jdk/microsoft-jdk-21.0.10-macos-x64.tar.gz"
+                        },
+                        "aarch64": {
+                            "url": "https://aka.ms/download-jdk/microsoft-jdk-21.0.10-macos-aarch64.tar.gz"
+                        }
+                    },
+                    "linux": {
+                        "x64": {
+                            "url": "https://aka.ms/download-jdk/microsoft-jdk-21.0.10-linux-x64.tar.gz"
+                        },
+                        "aarch64": {
+                            "url": "https://aka.ms/download-jdk/microsoft-jdk-21.0.10-linux-aarch64.tar.gz"
+                        }
+                    }
+                },
+                "21.0.9": {
+                    "windows": {
+                        "x64": {
+                            "url": "https://aka.ms/download-jdk/microsoft-jdk-21.0.9-windows-x64.zip"
+                        },
+                        "aarch64": {
+                            "url": "https://aka.ms/download-jdk/microsoft-jdk-21.0.9-windows-aarch64.zip"
+                        }
+                    },
+                    "macos": {
+                        "x64": {
+                            "url": "https://aka.ms/download-jdk/microsoft-jdk-21.0.9-macos-x64.tar.gz"
+                        },
+                        "aarch64": {
+                            "url": "https://aka.ms/download-jdk/microsoft-jdk-21.0.9-macos-aarch64.tar.gz"
+                        }
+                    },
+                    "linux": {
+                        "x64": {
+                            "url": "https://aka.ms/download-jdk/microsoft-jdk-21.0.9-linux-x64.tar.gz"
+                        },
+                        "aarch64": {
+                            "url": "https://aka.ms/download-jdk/microsoft-jdk-21.0.9-linux-aarch64.tar.gz"
+                        }
+                    }
+                },
+                "21.0.8": {
+                    "windows": {
+                        "x64": {
+                            "url": "https://aka.ms/download-jdk/microsoft-jdk-21.0.8-windows-x64.zip"
+                        },
+                        "aarch64": {
+                            "url": "https://aka.ms/download-jdk/microsoft-jdk-21.0.8-windows-aarch64.zip"
+                        }
+                    },
+                    "macos": {
+                        "x64": {
+                            "url": "https://aka.ms/download-jdk/microsoft-jdk-21.0.8-macos-x64.tar.gz"
+                        },
+                        "aarch64": {
+                            "url": "https://aka.ms/download-jdk/microsoft-jdk-21.0.8-macos-aarch64.tar.gz"
+                        }
+                    },
+                    "linux": {
+                        "x64": {
+                            "url": "https://aka.ms/download-jdk/microsoft-jdk-21.0.8-linux-x64.tar.gz"
+                        },
+                        "aarch64": {
+                            "url": "https://aka.ms/download-jdk/microsoft-jdk-21.0.8-linux-aarch64.tar.gz"
+                        }
+                    }
+                },
+                "21.0.7": {
+                    "windows": {
+                        "x64": {
+                            "url": "https://aka.ms/download-jdk/microsoft-jdk-21.0.7-windows-x64.zip"
+                        },
+                        "aarch64": {
+                            "url": "https://aka.ms/download-jdk/microsoft-jdk-21.0.7-windows-aarch64.zip"
+                        }
+                    },
+                    "macos": {
+                        "x64": {
+                            "url": "https://aka.ms/download-jdk/microsoft-jdk-21.0.7-macos-x64.tar.gz"
+                        },
+                        "aarch64": {
+                            "url": "https://aka.ms/download-jdk/microsoft-jdk-21.0.7-macos-aarch64.tar.gz"
+                        }
+                    },
+                    "linux": {
+                        "x64": {
+                            "url": "https://aka.ms/download-jdk/microsoft-jdk-21.0.7-linux-x64.tar.gz"
+                        },
+                        "aarch64": {
+                            "url": "https://aka.ms/download-jdk/microsoft-jdk-21.0.7-linux-aarch64.tar.gz"
+                        }
+                    }
+                },
+                "21": {
+                    "windows": {
+                        "x64": {
+                            "url": "https://aka.ms/download-jdk/microsoft-jdk-21.0.10-windows-x64.zip"
+                        },
+                        "aarch64": {
+                            "url": "https://aka.ms/download-jdk/microsoft-jdk-21.0.10-windows-aarch64.zip"
+                        }
+                    },
+                    "macos": {
+                        "x64": {
+                            "url": "https://aka.ms/download-jdk/microsoft-jdk-21.0.10-macos-x64.tar.gz"
+                        },
+                        "aarch64": {
+                            "url": "https://aka.ms/download-jdk/microsoft-jdk-21.0.10-macos-aarch64.tar.gz"
+                        }
+                    },
+                    "linux": {
+                        "x64": {
+                            "url": "https://aka.ms/download-jdk/microsoft-jdk-21.0.10-linux-x64.tar.gz"
+                        },
+                        "aarch64": {
+                            "url": "https://aka.ms/download-jdk/microsoft-jdk-21.0.10-linux-aarch64.tar.gz"
+                        }
+                    }
+                },
+                "17": {
+                    "windows": {
+                        "x64": {
+                            "url": "https://aka.ms/download-jdk/microsoft-jdk-17.0.18-windows-x64.zip"
+                        },
+                        "aarch64": {
+                            "url": "https://aka.ms/download-jdk/microsoft-jdk-17.0.18-windows-aarch64.zip"
+                        }
+                    },
+                    "macos": {
+                        "x64": {
+                            "url": "https://aka.ms/download-jdk/microsoft-jdk-17.0.18-macos-x64.tar.gz"
+                        },
+                        "aarch64": {
+                            "url": "https://aka.ms/download-jdk/microsoft-jdk-17.0.18-macos-aarch64.tar.gz"
+                        }
+                    },
+                    "linux": {
+                        "x64": {
+                            "url": "https://aka.ms/download-jdk/microsoft-jdk-17.0.18-linux-x64.tar.gz"
+                        },
+                        "aarch64": {
+                            "url": "https://aka.ms/download-jdk/microsoft-jdk-17.0.18-linux-aarch64.tar.gz"
+                        }
+                    }
+                },
+                "11": {
+                    "windows": {
+                        "x64": {
+                            "url": "https://aka.ms/download-jdk/microsoft-jdk-11.0.30-windows-x64.zip"
+                        },
+                        "aarch64": {
+                            "url": "https://aka.ms/download-jdk/microsoft-jdk-11.0.30-windows-aarch64.zip"
+                        }
+                    },
+                    "macos": {
+                        "x64": {
+                            "url": "https://aka.ms/download-jdk/microsoft-jdk-11.0.30-macos-x64.tar.gz"
+                        },
+                        "aarch64": {
+                            "url": "https://aka.ms/download-jdk/microsoft-jdk-11.0.30-macos-aarch64.tar.gz"
+                        }
+                    },
+                    "linux": {
+                        "x64": {
+                            "url": "https://aka.ms/download-jdk/microsoft-jdk-11.0.30-linux-x64.tar.gz"
+                        },
+                        "aarch64": {
+                            "url": "https://aka.ms/download-jdk/microsoft-jdk-11.0.30-linux-aarch64.tar.gz"
+                        }
                     }
                 }
             },
-            "11": {
-                "windows": {
-                    "x64": {
-                        "url": "https://api.adoptium.net/v3/binary/latest/11/ga/windows/x64/jdk/hotspot/normal/adoptium",
-                        "sha256": "925a63cb019fd605579e639980e99abefb3186e79f36979183dc45b294d6bf0f"
+            "zulu": {
+                "25": {
+                    "windows": {
+                        "x64": {
+                            "url": "https://cdn.azul.com/zulu/bin/zulu25.32.21-ca-jdk25.0.2-win_x64.zip"
+                        },
+                        "aarch64": {
+                            "url": "https://cdn.azul.com/zulu/bin/zulu25.32.21-ca-jdk25.0.2-win_x64.zip"
+                        }
+                    },
+                    "macos": {
+                        "x64": {
+                            "url": "https://cdn.azul.com/zulu/bin/zulu25.32.21-ca-jdk25.0.2-macosx_x64.tar.gz"
+                        },
+                        "aarch64": {
+                            "url": "https://cdn.azul.com/zulu/bin/zulu25.32.21-ca-jdk25.0.2-macosx_aarch64.tar.gz"
+                        }
+                    },
+                    "linux": {
+                        "x64": {
+                            "url": "https://cdn.azul.com/zulu/bin/zulu25.32.21-ca-jdk25.0.2-linux_x64.tar.gz"
+                        },
+                        "aarch64": {
+                            "url": "https://cdn.azul.com/zulu/bin/zulu25.32.21-ca-jdk25.0.2-linux_aarch64.tar.gz"
+                        }
+                    },
+                    "linux-musl": {
+                        "x64": {
+                            "url": "https://cdn.azul.com/zulu/bin/zulu25.32.21-ca-jdk25.0.2-linux_musl_x64.tar.gz"
+                        },
+                        "aarch64": {
+                            "url": "https://cdn.azul.com/zulu/bin/zulu25.32.21-ca-jdk25.0.2-linux_musl_aarch64.tar.gz"
+                        }
                     }
                 },
-                "macos": {
-                    "x64": {
-                        "url": "https://api.adoptium.net/v3/binary/latest/11/ga/mac/x64/jdk/hotspot/normal/adoptium",
-                        "sha256": "bb080059fdd02b61f8348f6b4d0878b8d33da0ebff9a6860e2497e4c5b8ee682"
+                "21": {
+                    "windows": {
+                        "x64": {
+                            "url": "https://cdn.azul.com/zulu/bin/zulu21.48.17-ca-jdk21.0.10-win_x64.zip"
+                        },
+                        "aarch64": {
+                            "url": "https://cdn.azul.com/zulu/bin/zulu21.48.17-ca-jdk21.0.10-win_x64.zip"
+                        }
                     },
-                    "aarch64": {
-                        "url": "https://api.adoptium.net/v3/binary/latest/11/ga/mac/aarch64/jdk/hotspot/normal/adoptium",
-                        "sha256": "d7b52d25d6f7aae2d4d85191d84bc132b80d061006dcd5f76ca79f277c3acb28"
-                    }
-                },
-                "linux": {
-                    "x64": {
-                        "url": "https://api.adoptium.net/v3/binary/latest/11/ga/linux/x64/jdk/hotspot/normal/adoptium",
-                        "sha256": "1911fa4010d59985d4cba9f4295c704ae64d08dfc3c2d5747bbc18655b1e911a"
+                    "macos": {
+                        "x64": {
+                            "url": "https://cdn.azul.com/zulu/bin/zulu21.48.17-ca-jdk21.0.10-macosx_x64.tar.gz"
+                        },
+                        "aarch64": {
+                            "url": "https://cdn.azul.com/zulu/bin/zulu21.48.17-ca-jdk21.0.10-macosx_aarch64.tar.gz"
+                        }
                     },
-                    "aarch64": {
-                        "url": "https://api.adoptium.net/v3/binary/latest/11/ga/linux/aarch64/jdk/hotspot/normal/adoptium",
-                        "sha256": "3c8fb6754deced4e08a03524b6af1df4f3df451f1832f3dcd3a6848fd54b8d08"
-                    },
-                    "s390x": {
-                        "url": "https://api.adoptium.net/v3/binary/latest/11/ga/linux/s390x/jdk/hotspot/normal/adoptium",
-                        "sha256": "15e5cbcadcf3d43623c31b825063cdc2817b9f1ba840b51dc6ef70e5d33c84e3"
-                    },
-                    "ppc64le": {
-                        "url": "https://api.adoptium.net/v3/binary/latest/11/ga/linux/ppc64le/jdk/hotspot/normal/adoptium",
-                        "sha256": "b262b735b215173003766da36588d5f717dceada0286db41b439f93fb2ada468"
-                    },
-                    "arm": {
-                        "url": "https://api.adoptium.net/v3/binary/latest/11/ga/linux/ppc64le/jdk/hotspot/normal/adoptium"
-                    }
-                },
-                "linux-musl": {
-                    "x64": {
-                        "url": "https://api.adoptium.net/v3/binary/latest/11/ga/alpine-linux/x64/jdk/hotspot/normal/adoptium"
+                    "linux": {
+                        "x64": {
+                            "url": "https://cdn.azul.com/zulu/bin/zulu21.48.17-ca-jdk21.0.10-linux_x64.tar.gz"
+                        },
+                        "aarch64": {
+                            "url": "https://cdn.azul.com/zulu/bin/zulu21.48.17-ca-jdk21.0.10-linux_aarch64.tar.gz"
+                        }
                     }
                 }
             },
-            "8": {
-                "windows": {
-                    "x64": {
-                        "url": "https://api.adoptium.net/v3/binary/latest/8/ga/windows/x64/jdk/hotspot/normal/adoptium",
-                        "sha256": "925a63cb019fd605579e639980e99abefb3186e79f36979183dc45b294d6bf0f"
+            "liberica": {
+                "25": {
+                    "windows": {
+                        "x64": {
+                            "url": "https://download.bell-sw.com/java/25.0.2+12/bellsoft-jdk25.0.2+12-windows-amd64.zip"
+                        },
+                        "aarch64": {
+                            "url": "https://download.bell-sw.com/java/25.0.2+12/bellsoft-jdk25.0.2+12-windows-aarch64.zip"
+                        }
+                    },
+                    "macos": {
+                        "x64": {
+                            "url": "https://download.bell-sw.com/java/25.0.2+12/bellsoft-jdk25.0.2+12-macos-amd64.tar.gz"
+                        },
+                        "aarch64": {
+                            "url": "https://download.bell-sw.com/java/25.0.2+12/bellsoft-jdk25.0.2+12-macos-aarch64.tar.gz"
+                        }
+                    },
+                    "linux": {
+                        "x64": {
+                            "url": "https://download.bell-sw.com/java/25.0.2+12/bellsoft-jdk25.0.2+12-linux-amd64.tar.gz"
+                        },
+                        "aarch64": {
+                            "url": "https://download.bell-sw.com/java/25.0.2+12/bellsoft-jdk25.0.2+12-linux-aarch64.tar.gz"
+                        }
                     }
                 },
-                "macos": {
-                    "x64": {
-                        "url": "https://api.adoptium.net/v3/binary/latest/8/ga/mac/x64/jdk/hotspot/normal/adoptium",
-                        "sha256": "bb080059fdd02b61f8348f6b4d0878b8d33da0ebff9a6860e2497e4c5b8ee682"
+                "21": {
+                    "windows": {
+                        "x64": {
+                            "url": "https://download.bell-sw.com/java/21.0.10+10/bellsoft-jdk21.0.10+10-windows-amd64.zip"
+                        },
+                        "aarch64": {
+                            "url": "https://download.bell-sw.com/java/21.0.10+10/bellsoft-jdk21.0.10+10-windows-aarch64.zip"
+                        }
                     },
-                    "aarch64": {
-                        "url": "https://api.adoptium.net/v3/binary/latest/8/ga/mac/aarch64/jdk/hotspot/normal/adoptium",
-                        "sha256": "d7b52d25d6f7aae2d4d85191d84bc132b80d061006dcd5f76ca79f277c3acb28"
+                    "macos": {
+                        "x64": {
+                            "url": "https://download.bell-sw.com/java/21.0.10+10/bellsoft-jdk21.0.10+10-macos-amd64.tar.gz"
+                        },
+                        "aarch64": {
+                            "url": "https://download.bell-sw.com/java/21.0.10+10/bellsoft-jdk21.0.10+10-macos-aarch64.tar.gz"
+                        }
+                    },
+                    "linux": {
+                        "x64": {
+                            "url": "https://download.bell-sw.com/java/21.0.10+10/bellsoft-jdk21.0.10+10-linux-amd64.tar.gz"
+                        },
+                        "aarch64": {
+                            "url": "https://download.bell-sw.com/java/21.0.10+10/bellsoft-jdk21.0.10+10-linux-aarch64.tar.gz"
+                        }
                     }
                 },
-                "linux": {
-                    "x64": {
-                        "url": "https://api.adoptium.net/v3/binary/latest/8/ga/linux/x64/jdk/hotspot/normal/adoptium",
-                        "sha256": "1911fa4010d59985d4cba9f4295c704ae64d08dfc3c2d5747bbc18655b1e911a"
+                "17": {
+                    "windows": {
+                        "x64": {
+                            "url": "https://download.bell-sw.com/java/17.0.18+10/bellsoft-jdk17.0.18+10-windows-amd64.zip"
+                        },
+                        "aarch64": {
+                            "url": "https://download.bell-sw.com/java/17.0.18+10/bellsoft-jdk17.0.18+10-windows-aarch64.zip"
+                        }
                     },
-                    "aarch64": {
-                        "url": "https://api.adoptium.net/v3/binary/latest/8/ga/linux/aarch64/jdk/hotspot/normal/adoptium",
-                        "sha256": "3c8fb6754deced4e08a03524b6af1df4f3df451f1832f3dcd3a6848fd54b8d08"
+                    "macos": {
+                        "x64": {
+                            "url": "https://download.bell-sw.com/java/17.0.18+10/bellsoft-jdk17.0.18+10-macos-amd64.tar.gz"
+                        },
+                        "aarch64": {
+                            "url": "https://download.bell-sw.com/java/17.0.18+10/bellsoft-jdk17.0.18+10-macos-aarch64.tar.gz"
+                        }
                     },
-                    "ppc64le": {
-                        "url": "https://api.adoptium.net/v3/binary/latest/8/ga/linux/ppc64le/jdk/hotspot/normal/adoptium",
-                        "sha256": "b262b735b215173003766da36588d5f717dceada0286db41b439f93fb2ada468"
+                    "linux": {
+                        "x64": {
+                            "url": "https://download.bell-sw.com/java/17.0.18+10/bellsoft-jdk17.0.18+10-linux-amd64.tar.gz"
+                        },
+                        "aarch64": {
+                            "url": "https://download.bell-sw.com/java/17.0.18+10/bellsoft-jdk17.0.18+10-linux-aarch64.tar.gz"
+                        }
                     }
                 },
-                "linux-musl": {
-                    "x64": {
-                        "url": "https://api.adoptium.net/v3/binary/latest/8/ga/alpine-linux/x64/jdk/hotspot/normal/adoptium"
+                "11": {
+                    "windows": {
+                        "x64": {
+                            "url": "https://download.bell-sw.com/java/11.0.30+9/bellsoft-jdk11.0.30+9-windows-amd64.zip"
+                        },
+                        "aarch64": {
+                            "url": "https://download.bell-sw.com/java/11.0.30+9/bellsoft-jdk11.0.30+9-windows-aarch64.zip"
+                        }
+                    },
+                    "macos": {
+                        "x64": {
+                            "url": "https://download.bell-sw.com/java/11.0.30+9/bellsoft-jdk11.0.30+9-macos-amd64.tar.gz"
+                        },
+                        "aarch64": {
+                            "url": "https://download.bell-sw.com/java/11.0.30+9/bellsoft-jdk11.0.30+9-macos-aarch64.tar.gz"
+                        }
+                    },
+                    "linux": {
+                        "x64": {
+                            "url": "https://download.bell-sw.com/java/11.0.30+9/bellsoft-jdk11.0.30+9-linux-amd64.tar.gz"
+                        },
+                        "aarch64": {
+                            "url": "https://download.bell-sw.com/java/11.0.30+9/bellsoft-jdk11.0.30+9-linux-aarch64.tar.gz"
+                        }
+                    }
+                },
+                "8": {
+                    "windows": {
+                        "x64": {
+                            "url": "https://download.bell-sw.com/java/8u482+10/bellsoft-jdk8u482+10-windows-amd64.zip"
+                        }
+                    },
+                    "macos": {
+                        "x64": {
+                            "url": "https://download.bell-sw.com/java/8u482+10/bellsoft-jdk8u482+10-macos-amd64.tar.gz"
+                        },
+                        "aarch64": {
+                            "url": "https://download.bell-sw.com/java/8u482+10/bellsoft-jdk8u482+10-macos-aarch64.tar.gz"
+                        }
+                    },
+                    "linux": {
+                        "x64": {
+                            "url": "https://download.bell-sw.com/java/8u482+10/bellsoft-jdk8u482+10-linux-amd64.tar.gz"
+                        },
+                        "aarch64": {
+                            "url": "https://download.bell-sw.com/java/8u482+10/bellsoft-jdk8u482+10-linux-aarch64.tar.gz"
+                        }
+                    }
+                }
+            },
+            "oracle": {
+                "25": {
+                    "windows": {
+                        "x64": {
+                            "url": "https://download.oracle.com/java/25/latest/jdk-25_windows-x64_bin.zip"
+                        }
+                    },
+                    "macos": {
+                        "x64": {
+                            "url": "https://download.oracle.com/java/25/latest/jdk-25_macos-x64_bin.tar.gz"
+                        },
+                        "aarch64": {
+                            "url": "https://download.oracle.com/java/25/latest/jdk-25_macos-aarch64_bin.tar.gz"
+                        }
+                    },
+                    "linux": {
+                        "x64": {
+                            "url": "https://download.oracle.com/java/25/latest/jdk-25_linux-x64_bin.tar.gz"
+                        },
+                        "aarch64": {
+                            "url": "https://download.oracle.com/java/25/latest/jdk-25_linux-aarch64_bin.tar.gz"
+                        }
+                    }
+                },
+                "21": {
+                    "windows": {
+                        "x64": {
+                            "url": "https://download.oracle.com/java/21/latest/jdk-21_windows-x64_bin.zip"
+                        }
+                    },
+                    "macos": {
+                        "x64": {
+                            "url": "https://download.oracle.com/java/21/latest/jdk-21_macos-x64_bin.tar.gz"
+                        },
+                        "aarch64": {
+                            "url": "https://download.oracle.com/java/21/latest/jdk-21_macos-aarch64_bin.tar.gz"
+                        }
+                    },
+                    "linux": {
+                        "x64": {
+                            "url": "https://download.oracle.com/java/21/latest/jdk-21_linux-x64_bin.tar.gz"
+                        },
+                        "aarch64": {
+                            "url": "https://download.oracle.com/java/21/latest/jdk-21_linux-aarch64_bin.tar.gz"
+                        }
+                    }
+                }
+            },
+            "sap": {
+                "26": {
+                    "windows": {
+                        "x64": {
+                            "url": "https://github.com/SAP/SapMachine/releases/download/sapmachine-26/sapmachine-jdk-26_windows-x64_bin.zip"
+                        }
+                    },
+                    "macos": {
+                        "aarch64": {
+                            "url": "https://github.com/SAP/SapMachine/releases/download/sapmachine-26/sapmachine-jdk-26_macos-aarch64_bin.tar.gz"
+                        }
+                    },
+                    "linux": {
+                        "x64": {
+                            "url": "https://github.com/SAP/SapMachine/releases/download/sapmachine-26/sapmachine-jdk-26_linux-x64_bin.tar.gz"
+                        },
+                        "aarch64": {
+                            "url": "https://github.com/SAP/SapMachine/releases/download/sapmachine-26/sapmachine-jdk-26_linux-aarch64_bin.tar.gz"
+                        }
+                    },
+                    "aix": {
+                        "ppc64le": {
+                            "url": "https://github.com/SAP/SapMachine/releases/download/sapmachine-26/sapmachine-jdk-26_aix-ppc64_bin.tar.gz"
+                        }
+                    }
+                },
+                "25": {
+                    "windows": {
+                        "x64": {
+                            "url": "https://github.com/SAP/SapMachine/releases/download/sapmachine-25.0.3%2B6/sapmachine-jdk-25.0.3-ea.6_windows-x64_bin.zip"
+                        }
+                    },
+                    "macos": {
+                        "aarch64": {
+                            "url": "https://github.com/SAP/SapMachine/releases/download/sapmachine-25.0.3%2B6/sapmachine-jdk-25.0.3-ea.6_macos-aarch64_bin.tar.gz"
+                        }
+                    },
+                    "linux": {
+                        "x64": {
+                            "url": "https://github.com/SAP/SapMachine/releases/download/sapmachine-25.0.3%2B6/sapmachine-jdk-25.0.3-ea.6_linux-x64_bin.tar.gz"
+                        },
+                        "aarch64": {
+                            "url": "https://github.com/SAP/SapMachine/releases/download/sapmachine-25.0.3%2B6/sapmachine-jdk-25.0.3-ea.6_linux-aarch64_bin.tar.gz"
+                        }
+                    },
+                    "aix": {
+                        "ppc64le": {
+                            "url": "https://github.com/SAP/SapMachine/releases/download/sapmachine-25.0.3%2B6/sapmachine-jdk-25.0.3-ea.6_aix-ppc64_bin.tar.gz"
+                        }
+                    }
+                },
+                "21": {
+                    "windows": {
+                        "x64": {
+                            "url": "https://github.com/SAP/SapMachine/releases/download/sapmachine-21.0.11%2B7/sapmachine-jdk-21.0.11-ea.7_windows-x64_bin.zip"
+                        }
+                    },
+                    "macos": {
+                        "aarch64": {
+                            "url": "https://github.com/SAP/SapMachine/releases/download/sapmachine-21.0.11%2B7/sapmachine-jdk-21.0.11-ea.7_macos-aarch64_bin.tar.gz"
+                        }
+                    },
+                    "linux": {
+                        "x64": {
+                            "url": "https://github.com/SAP/SapMachine/releases/download/sapmachine-21.0.11%2B7/sapmachine-jdk-21.0.11-ea.7_linux-x64_bin.tar.gz"
+                        },
+                        "aarch64": {
+                            "url": "https://github.com/SAP/SapMachine/releases/download/sapmachine-21.0.11%2B7/sapmachine-jdk-21.0.11-ea.7_linux-aarch64_bin.tar.gz"
+                        }
+                    },
+                    "aix": {
+                        "ppc64le": {
+                            "url": "https://github.com/SAP/SapMachine/releases/download/sapmachine-21.0.11%2B6/sapmachine-jdk-21.0.11-ea.6_aix-ppc64_bin.tar.gz"
+                        }
+                    }
+                },
+                "17": {
+                    "windows": {
+                        "x64": {
+                            "url": "https://github.com/SAP/SapMachine/releases/download/sapmachine-17.0.19%2B7/sapmachine-jdk-17.0.19-ea.7_windows-x64_bin.zip"
+                        }
+                    },
+                    "macos": {
+                        "x64": {
+                            "url": "https://github.com/SAP/SapMachine/releases/download/sapmachine-17.0.19%2B7/sapmachine-jdk-17.0.19-ea.7_macos-x64_bin.tar.gz"
+                        },
+                        "aarch64": {
+                            "url": "https://github.com/SAP/SapMachine/releases/download/sapmachine-17.0.19%2B7/sapmachine-jdk-17.0.19-ea.7_macos-aarch64_bin.tar.gz"
+                        }
+                    },
+                    "linux": {
+                        "x64": {
+                            "url": "https://github.com/SAP/SapMachine/releases/download/sapmachine-17.0.19%2B7/sapmachine-jdk-17.0.19-ea.7_linux-x64_bin.tar.gz"
+                        },
+                        "aarch64": {
+                            "url": "https://github.com/SAP/SapMachine/releases/download/sapmachine-17.0.19%2B7/sapmachine-jdk-17.0.19-ea.7_linux-aarch64_bin.tar.gz"
+                        }
+                    }
+                }
+            },
+            "graalvm-ce": {
+                "25": {
+                    "windows": {
+                        "x64": {
+                            "url": "https://github.com/graalvm/graalvm-ce-builds/releases/download/jdk-25.0.2/graalvm-community-jdk-25.0.2_windows-x64_bin.zip"
+                        }
+                    },
+                    "macos": {
+                        "aarch64": {
+                            "url": "https://github.com/graalvm/graalvm-ce-builds/releases/download/jdk-25.0.2/graalvm-community-jdk-25.0.2_macos-aarch64_bin.tar.gz"
+                        }
+                    },
+                    "linux": {
+                        "x64": {
+                            "url": "https://github.com/graalvm/graalvm-ce-builds/releases/download/jdk-25.0.2/graalvm-community-jdk-25.0.2_linux-x64_bin.tar.gz"
+                        },
+                        "aarch64": {
+                            "url": "https://github.com/graalvm/graalvm-ce-builds/releases/download/jdk-25.0.2/graalvm-community-jdk-25.0.2_linux-aarch64_bin.tar.gz"
+                        }
+                    }
+                },
+                "24": {
+                    "windows": {
+                        "x64": {
+                            "url": "https://github.com/graalvm/graalvm-ce-builds/releases/download/jdk-24.0.2/graalvm-community-jdk-24.0.2_windows-x64_bin.zip"
+                        }
+                    },
+                    "macos": {
+                        "x64": {
+                            "url": "https://github.com/graalvm/graalvm-ce-builds/releases/download/jdk-24.0.2/graalvm-community-jdk-24.0.2_macos-x64_bin.tar.gz"
+                        },
+                        "aarch64": {
+                            "url": "https://github.com/graalvm/graalvm-ce-builds/releases/download/jdk-24.0.2/graalvm-community-jdk-24.0.2_macos-aarch64_bin.tar.gz"
+                        }
+                    },
+                    "linux": {
+                        "x64": {
+                            "url": "https://github.com/graalvm/graalvm-ce-builds/releases/download/jdk-24.0.2/graalvm-community-jdk-24.0.2_linux-x64_bin.tar.gz"
+                        },
+                        "aarch64": {
+                            "url": "https://github.com/graalvm/graalvm-ce-builds/releases/download/jdk-24.0.2/graalvm-community-jdk-24.0.2_linux-aarch64_bin.tar.gz"
+                        }
+                    }
+                },
+                "23": {
+                    "windows": {
+                        "x64": {
+                            "url": "https://github.com/graalvm/graalvm-ce-builds/releases/download/jdk-23.0.2/graalvm-community-jdk-23.0.2_windows-x64_bin.zip"
+                        }
+                    },
+                    "macos": {
+                        "x64": {
+                            "url": "https://github.com/graalvm/graalvm-ce-builds/releases/download/jdk-23.0.2/graalvm-community-jdk-23.0.2_macos-x64_bin.tar.gz"
+                        },
+                        "aarch64": {
+                            "url": "https://github.com/graalvm/graalvm-ce-builds/releases/download/jdk-23.0.2/graalvm-community-jdk-23.0.2_macos-aarch64_bin.tar.gz"
+                        }
+                    },
+                    "linux": {
+                        "x64": {
+                            "url": "https://github.com/graalvm/graalvm-ce-builds/releases/download/jdk-23.0.2/graalvm-community-jdk-23.0.2_linux-x64_bin.tar.gz"
+                        },
+                        "aarch64": {
+                            "url": "https://github.com/graalvm/graalvm-ce-builds/releases/download/jdk-23.0.2/graalvm-community-jdk-23.0.2_linux-aarch64_bin.tar.gz"
+                        }
+                    }
+                },
+                "22": {
+                    "windows": {
+                        "x64": {
+                            "url": "https://github.com/graalvm/graalvm-ce-builds/releases/download/jdk-22.0.2/graalvm-community-jdk-22.0.2_windows-x64_bin.zip"
+                        }
+                    },
+                    "macos": {
+                        "x64": {
+                            "url": "https://github.com/graalvm/graalvm-ce-builds/releases/download/jdk-22.0.2/graalvm-community-jdk-22.0.2_macos-x64_bin.tar.gz"
+                        },
+                        "aarch64": {
+                            "url": "https://github.com/graalvm/graalvm-ce-builds/releases/download/jdk-22.0.2/graalvm-community-jdk-22.0.2_macos-aarch64_bin.tar.gz"
+                        }
+                    },
+                    "linux": {
+                        "x64": {
+                            "url": "https://github.com/graalvm/graalvm-ce-builds/releases/download/jdk-22.0.2/graalvm-community-jdk-22.0.2_linux-x64_bin.tar.gz"
+                        },
+                        "aarch64": {
+                            "url": "https://github.com/graalvm/graalvm-ce-builds/releases/download/jdk-22.0.2/graalvm-community-jdk-22.0.2_linux-aarch64_bin.tar.gz"
+                        }
+                    }
+                },
+                "21": {
+                    "windows": {
+                        "x64": {
+                            "url": "https://github.com/graalvm/graalvm-ce-builds/releases/download/jdk-21.0.2/graalvm-community-jdk-21.0.2_windows-x64_bin.zip"
+                        }
+                    },
+                    "macos": {
+                        "x64": {
+                            "url": "https://github.com/graalvm/graalvm-ce-builds/releases/download/jdk-21.0.2/graalvm-community-jdk-21.0.2_macos-x64_bin.tar.gz"
+                        },
+                        "aarch64": {
+                            "url": "https://github.com/graalvm/graalvm-ce-builds/releases/download/jdk-21.0.2/graalvm-community-jdk-21.0.2_macos-aarch64_bin.tar.gz"
+                        }
+                    },
+                    "linux": {
+                        "x64": {
+                            "url": "https://github.com/graalvm/graalvm-ce-builds/releases/download/jdk-21.0.2/graalvm-community-jdk-21.0.2_linux-x64_bin.tar.gz"
+                        },
+                        "aarch64": {
+                            "url": "https://github.com/graalvm/graalvm-ce-builds/releases/download/jdk-21.0.2/graalvm-community-jdk-21.0.2_linux-aarch64_bin.tar.gz"
+                        }
+                    }
+                },
+                "20": {
+                    "windows": {
+                        "x64": {
+                            "url": "https://github.com/graalvm/graalvm-ce-builds/releases/download/jdk-20.0.2/graalvm-community-jdk-20.0.2_windows-x64_bin.zip"
+                        }
+                    },
+                    "macos": {
+                        "x64": {
+                            "url": "https://github.com/graalvm/graalvm-ce-builds/releases/download/jdk-20.0.2/graalvm-community-jdk-20.0.2_macos-x64_bin.tar.gz"
+                        },
+                        "aarch64": {
+                            "url": "https://github.com/graalvm/graalvm-ce-builds/releases/download/jdk-20.0.2/graalvm-community-jdk-20.0.2_macos-aarch64_bin.tar.gz"
+                        }
+                    },
+                    "linux": {
+                        "x64": {
+                            "url": "https://github.com/graalvm/graalvm-ce-builds/releases/download/jdk-20.0.2/graalvm-community-jdk-20.0.2_linux-x64_bin.tar.gz"
+                        },
+                        "aarch64": {
+                            "url": "https://github.com/graalvm/graalvm-ce-builds/releases/download/jdk-20.0.2/graalvm-community-jdk-20.0.2_linux-aarch64_bin.tar.gz"
+                        }
+                    }
+                },
+                "17": {
+                    "windows": {
+                        "x64": {
+                            "url": "https://github.com/graalvm/graalvm-ce-builds/releases/download/jdk-17.0.7/graalvm-community-jdk-17.0.7_windows-x64_bin.zip"
+                        }
+                    },
+                    "macos": {
+                        "x64": {
+                            "url": "https://github.com/graalvm/graalvm-ce-builds/releases/download/jdk-17.0.7/graalvm-community-jdk-17.0.7_macos-x64_bin.tar.gz"
+                        },
+                        "aarch64": {
+                            "url": "https://github.com/graalvm/graalvm-ce-builds/releases/download/jdk-17.0.7/graalvm-community-jdk-17.0.7_macos-aarch64_bin.tar.gz"
+                        }
+                    },
+                    "linux": {
+                        "x64": {
+                            "url": "https://github.com/graalvm/graalvm-ce-builds/releases/download/jdk-17.0.7/graalvm-community-jdk-17.0.7_linux-x64_bin.tar.gz"
+                        },
+                        "aarch64": {
+                            "url": "https://github.com/graalvm/graalvm-ce-builds/releases/download/jdk-17.0.7/graalvm-community-jdk-17.0.7_linux-aarch64_bin.tar.gz"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "kotlin": {
+        "jvm": {
+            "jetbrains": {
+                "2.3.20": {
+                    "windows": {
+                        "x64": {
+                            "url": "https://github.com/JetBrains/kotlin/releases/download/v2.3.20/kotlin-compiler-2.3.20.zip"
+                        },
+                        "aarch64": {
+                            "url": "https://github.com/JetBrains/kotlin/releases/download/v2.3.20/kotlin-compiler-2.3.20.zip"
+                        }
+                    },
+                    "macos": {
+                        "x64": {
+                            "url": "https://github.com/JetBrains/kotlin/releases/download/v2.3.20/kotlin-compiler-2.3.20.zip"
+                        },
+                        "aarch64": {
+                            "url": "https://github.com/JetBrains/kotlin/releases/download/v2.3.20/kotlin-compiler-2.3.20.zip"
+                        }
+                    },
+                    "linux": {
+                        "x64": {
+                            "url": "https://github.com/JetBrains/kotlin/releases/download/v2.3.20/kotlin-compiler-2.3.20.zip"
+                        },
+                        "aarch64": {
+                            "url": "https://github.com/JetBrains/kotlin/releases/download/v2.3.20/kotlin-compiler-2.3.20.zip"
+                        }
+                    }
+                },
+                "2.3.19": {
+                    "windows": {
+                        "x64": {
+                            "url": "https://github.com/JetBrains/kotlin/releases/download/v2.3.19/kotlin-compiler-2.3.19.zip"
+                        },
+                        "aarch64": {
+                            "url": "https://github.com/JetBrains/kotlin/releases/download/v2.3.19/kotlin-compiler-2.3.19.zip"
+                        }
+                    },
+                    "macos": {
+                        "x64": {
+                            "url": "https://github.com/JetBrains/kotlin/releases/download/v2.3.19/kotlin-compiler-2.3.19.zip"
+                        },
+                        "aarch64": {
+                            "url": "https://github.com/JetBrains/kotlin/releases/download/v2.3.19/kotlin-compiler-2.3.19.zip"
+                        }
+                    },
+                    "linux": {
+                        "x64": {
+                            "url": "https://github.com/JetBrains/kotlin/releases/download/v2.3.19/kotlin-compiler-2.3.19.zip"
+                        },
+                        "aarch64": {
+                            "url": "https://github.com/JetBrains/kotlin/releases/download/v2.3.19/kotlin-compiler-2.3.19.zip"
+                        }
+                    }
+                },
+                "2": {
+                    "windows": {
+                        "x64": {
+                            "url": "https://github.com/JetBrains/kotlin/releases/download/v2.3.20/kotlin-compiler-2.3.20.zip"
+                        },
+                        "aarch64": {
+                            "url": "https://github.com/JetBrains/kotlin/releases/download/v2.3.20/kotlin-compiler-2.3.20.zip"
+                        }
+                    },
+                    "macos": {
+                        "x64": {
+                            "url": "https://github.com/JetBrains/kotlin/releases/download/v2.3.20/kotlin-compiler-2.3.20.zip"
+                        },
+                        "aarch64": {
+                            "url": "https://github.com/JetBrains/kotlin/releases/download/v2.3.20/kotlin-compiler-2.3.20.zip"
+                        }
+                    },
+                    "linux": {
+                        "x64": {
+                            "url": "https://github.com/JetBrains/kotlin/releases/download/v2.3.20/kotlin-compiler-2.3.20.zip"
+                        },
+                        "aarch64": {
+                            "url": "https://github.com/JetBrains/kotlin/releases/download/v2.3.20/kotlin-compiler-2.3.20.zip"
+                        }
                     }
                 }
             }
         },
-        "corretto": {
-            "25": {
-                "windows": {
-                    "x64": {
-                        "url": "https://corretto.aws/downloads/latest/amazon-corretto-25-x64-windows-jdk.zip"
-                    }
-                },
-                "macos": {
-                    "x64": {
-                        "url": "https://corretto.aws/downloads/latest/amazon-corretto-25-x64-macos-jdk.tar.gz"
+        "native": {
+            "jetbrains": {
+                "2.3.20": {
+                    "windows": {
+                        "x64": {
+                            "url": "https://github.com/JetBrains/kotlin/releases/download/v2.3.20/kotlin-native-prebuilt-windows-x86_64-2.3.20.zip"
+                        }
                     },
-                    "aarch64": {
-                        "url": "https://corretto.aws/downloads/latest/amazon-corretto-25-aarch64-macos-jdk.tar.gz"
-                    }
-                },
-                "linux": {
-                    "x64": {
-                        "url": "https://corretto.aws/downloads/latest/amazon-corretto-25-x64-linux-jdk.tar.gz"
+                    "macos": {
+                        "x64": {
+                            "url": "https://github.com/JetBrains/kotlin/releases/download/v2.3.20/kotlin-native-prebuilt-macos-x86_64-2.3.20.tar.gz"
+                        },
+                        "aarch64": {
+                            "url": "https://github.com/JetBrains/kotlin/releases/download/v2.3.20/kotlin-native-prebuilt-macos-aarch64-2.3.20.tar.gz"
+                        }
                     },
-                    "aarch64": {
-                        "url": "https://corretto.aws/downloads/latest/amazon-corretto-25-aarch64-linux-jdk.tar.gz"
-                    }
-                }
-            },
-            "21": {
-                "windows": {
-                    "x64": {
-                        "url": "https://corretto.aws/downloads/latest/amazon-corretto-21-x64-windows-jdk.zip"
-                    }
-                },
-                "macos": {
-                    "x64": {
-                        "url": "https://corretto.aws/downloads/latest/amazon-corretto-21-x64-macos-jdk.tar.gz"
-                    },
-                    "aarch64": {
-                        "url": "https://corretto.aws/downloads/latest/amazon-corretto-21-aarch64-macos-jdk.tar.gz"
-                    }
-                },
-                "linux": {
-                    "x64": {
-                        "url": "https://corretto.aws/downloads/latest/amazon-corretto-21-x64-linux-jdk.tar.gz"
-                    },
-                    "aarch64": {
-                        "url": "https://corretto.aws/downloads/latest/amazon-corretto-21-aarch64-linux-jdk.tar.gz"
-                    }
-                }
-            },
-            "17": {
-                "windows": {
-                    "x64": {
-                        "url": "https://corretto.aws/downloads/latest/amazon-corretto-17-x64-windows-jdk.zip"
-                    }
-                },
-                "macos": {
-                    "x64": {
-                        "url": "https://corretto.aws/downloads/latest/amazon-corretto-17-x64-macos-jdk.tar.gz"
-                    },
-                    "aarch64": {
-                        "url": "https://corretto.aws/downloads/latest/amazon-corretto-17-aarch64-macos-jdk.tar.gz"
-                    }
-                },
-                "linux": {
-                    "x64": {
-                        "url": "https://corretto.aws/downloads/latest/amazon-corretto-17-x64-linux-jdk.tar.gz"
-                    },
-                    "aarch64": {
-                        "url": "https://corretto.aws/downloads/latest/amazon-corretto-17-aarch64-linux-jdk.tar.gz"
-                    }
-                }
-            },
-            "11": {
-                "windows": {
-                    "x64": {
-                        "url": "https://corretto.aws/downloads/latest/amazon-corretto-11-x64-windows-jdk.zip"
-                    }
-                },
-                "macos": {
-                    "x64": {
-                        "url": "https://corretto.aws/downloads/latest/amazon-corretto-11-x64-macos-jdk.tar.gz"
-                    },
-                    "aarch64": {
-                        "url": "https://corretto.aws/downloads/latest/amazon-corretto-11-aarch64-macos-jdk.tar.gz"
-                    }
-                },
-                "linux": {
-                    "x64": {
-                        "url": "https://corretto.aws/downloads/latest/amazon-corretto-11-x64-linux-jdk.tar.gz"
-                    },
-                    "aarch64": {
-                        "url": "https://corretto.aws/downloads/latest/amazon-corretto-11-aarch64-linux-jdk.tar.gz"
-                    }
-                }
-            },
-            "8": {
-                "windows": {
-                    "x64": {
-                        "url": "https://corretto.aws/downloads/latest/amazon-corretto-8-x64-windows-jdk.zip"
-                    }
-                },
-                "macos": {
-                    "x64": {
-                        "url": "https://corretto.aws/downloads/latest/amazon-corretto-8-x64-macos-jdk.tar.gz"
-                    },
-                    "aarch64": {
-                        "url": "https://corretto.aws/downloads/latest/amazon-corretto-8-aarch64-macos-jdk.tar.gz"
-                    }
-                },
-                "linux": {
-                    "x64": {
-                        "url": "https://corretto.aws/downloads/latest/amazon-corretto-8-x64-linux-jdk.tar.gz"
-                    },
-                    "aarch64": {
-                        "url": "https://corretto.aws/downloads/latest/amazon-corretto-8-aarch64-linux-jdk.tar.gz"
-                    }
-                }
-            }
-        },
-        "microsoft": {
-            "25": {
-                "windows": {
-                    "x64": {
-                        "url": "https://aka.ms/download-jdk/microsoft-jdk-25.0.2-windows-x64.zip",
-                        "sha256": "38d1a42d189c50b24152014ef131931f25f4cc80400ce618f0477f5e4e5aa252"
-                    },
-                    "aarch64": {
-                        "url": "https://aka.ms/download-jdk/microsoft-jdk-25.0.2-windows-aarch64.zip",
-                        "sha256": "e0d9380cf3d0b5efc675664fa0db22cc9eb5d77c4fd2a132f4b58df0608593cf"
-                    }
-                },
-                "macos": {
-                    "x64": {
-                        "url": "https://aka.ms/download-jdk/microsoft-jdk-25.0.2-macos-x64.tar.gz",
-                        "sha256": "6bc02fd3182dee12510f253d08eeac342a1f0e03d7f4114763f83d8722e2915e"
-                    },
-                    "aarch64": {
-                        "url": "https://aka.ms/download-jdk/microsoft-jdk-25.0.2-macos-aarch64.tar.gz",
-                        "sha256": "0bface8af5ceea3bf8b7eec6d38f1a68b68b60db5ea14eb2a1bd9767cf971fed"
-                    }
-                },
-                "linux": {
-                    "x64": {
-                        "url": "https://aka.ms/download-jdk/microsoft-jdk-25.0.2-linux-x64.tar.gz",
-                        "sha256": "3ed688a48c9b9295e67f074a5d201f761af15f83a2e003e5d8fd6dd93c18a10a"
-                    },
-                    "aarch64": {
-                        "url": "https://aka.ms/download-jdk/microsoft-jdk-25.0.2-linux-aarch64.tar.gz",
-                        "sha256": "bdc5fffc0d1e741ab7840b8e733fca48b70d1b6838db4d90b94a78b90e6ea8cb"
-                    }
-                }
-            },
-            "21": {
-                "windows": {
-                    "x64": {
-                        "url": "https://aka.ms/download-jdk/microsoft-jdk-21.0.10-windows-x64.zip"
-                    },
-                    "aarch64": {
-                        "url": "https://aka.ms/download-jdk/microsoft-jdk-21.0.10-windows-aarch64.zip"
-                    }
-                },
-                "macos": {
-                    "x64": {
-                        "url": "https://aka.ms/download-jdk/microsoft-jdk-21.0.10-macos-x64.tar.gz"
-                    },
-                    "aarch64": {
-                        "url": "https://aka.ms/download-jdk/microsoft-jdk-21.0.10-macos-aarch64.tar.gz"
-                    }
-                },
-                "linux": {
-                    "x64": {
-                        "url": "https://aka.ms/download-jdk/microsoft-jdk-21.0.10-linux-x64.tar.gz"
-                    },
-                    "aarch64": {
-                        "url": "https://aka.ms/download-jdk/microsoft-jdk-21.0.10-linux-aarch64.tar.gz"
-                    }
-                }
-            },
-            "17": {
-                "windows": {
-                    "x64": {
-                        "url": "https://aka.ms/download-jdk/microsoft-jdk-17.0.18-windows-x64.zip"
-                    },
-                    "aarch64": {
-                        "url": "https://aka.ms/download-jdk/microsoft-jdk-17.0.18-windows-aarch64.zip"
-                    }
-                },
-                "macos": {
-                    "x64": {
-                        "url": "https://aka.ms/download-jdk/microsoft-jdk-17.0.18-macos-x64.tar.gz"
-                    },
-                    "aarch64": {
-                        "url": "https://aka.ms/download-jdk/microsoft-jdk-17.0.18-macos-aarch64.tar.gz"
-                    }
-                },
-                "linux": {
-                    "x64": {
-                        "url": "https://aka.ms/download-jdk/microsoft-jdk-17.0.18-linux-x64.tar.gz"
-                    },
-                    "aarch64": {
-                        "url": "https://aka.ms/download-jdk/microsoft-jdk-17.0.18-linux-aarch64.tar.gz"
-                    }
-                }
-            },
-            "11": {
-                "windows": {
-                    "x64": {
-                        "url": "https://aka.ms/download-jdk/microsoft-jdk-11.0.30-windows-x64.zip"
-                    },
-                    "aarch64": {
-                        "url": "https://aka.ms/download-jdk/microsoft-jdk-11.0.30-windows-aarch64.zip"
-                    }
-                },
-                "macos": {
-                    "x64": {
-                        "url": "https://aka.ms/download-jdk/microsoft-jdk-11.0.30-macos-x64.tar.gz"
-                    },
-                    "aarch64": {
-                        "url": "https://aka.ms/download-jdk/microsoft-jdk-11.0.30-macos-aarch64.tar.gz"
-                    }
-                },
-                "linux": {
-                    "x64": {
-                        "url": "https://aka.ms/download-jdk/microsoft-jdk-11.0.30-linux-x64.tar.gz"
-                    },
-                    "aarch64": {
-                        "url": "https://aka.ms/download-jdk/microsoft-jdk-11.0.30-linux-aarch64.tar.gz"
-                    }
-                }
-            }
-        },
-        "zulu": {
-            "25": {
-                "windows": {
-                    "x64": {
-                        "url": "https://cdn.azul.com/zulu/bin/zulu25.32.21-ca-jdk25.0.2-win_x64.zip"
-                    },
-                    "aarch64": {
-                        "url": "https://cdn.azul.com/zulu/bin/zulu25.32.21-ca-jdk25.0.2-win_x64.zip"
-                    }
-                },
-                "macos": {
-                    "x64": {
-                        "url": "https://cdn.azul.com/zulu/bin/zulu25.32.21-ca-jdk25.0.2-macosx_x64.tar.gz"
-                    },
-                    "aarch64": {
-                        "url": "https://cdn.azul.com/zulu/bin/zulu25.32.21-ca-jdk25.0.2-macosx_aarch64.tar.gz"
-                    }
-                },
-                "linux": {
-                    "x64": {
-                        "url": "https://cdn.azul.com/zulu/bin/zulu25.32.21-ca-jdk25.0.2-linux_x64.tar.gz"
-                    },
-                    "aarch64": {
-                        "url": "https://cdn.azul.com/zulu/bin/zulu25.32.21-ca-jdk25.0.2-linux_aarch64.tar.gz"
-                    }
-                },
-                "linux-musl": {
-                    "x64": {
-                        "url": "https://cdn.azul.com/zulu/bin/zulu25.32.21-ca-jdk25.0.2-linux_musl_x64.tar.gz"
-                    },
-                    "aarch64": {
-                        "url": "https://cdn.azul.com/zulu/bin/zulu25.32.21-ca-jdk25.0.2-linux_musl_aarch64.tar.gz"
-                    }
-                }
-            },
-            "21": {
-                "windows": {
-                    "x64": {
-                        "url": "https://cdn.azul.com/zulu/bin/zulu21.48.17-ca-jdk21.0.10-win_x64.zip"
-                    },
-                    "aarch64": {
-                        "url": "https://cdn.azul.com/zulu/bin/zulu21.48.17-ca-jdk21.0.10-win_x64.zip"
-                    }
-                },
-                "macos": {
-                    "x64": {
-                        "url": "https://cdn.azul.com/zulu/bin/zulu21.48.17-ca-jdk21.0.10-macosx_x64.tar.gz"
-                    },
-                    "aarch64": {
-                        "url": "https://cdn.azul.com/zulu/bin/zulu21.48.17-ca-jdk21.0.10-macosx_aarch64.tar.gz"
-                    }
-                },
-                "linux": {
-                    "x64": {
-                        "url": "https://cdn.azul.com/zulu/bin/zulu21.48.17-ca-jdk21.0.10-linux_x64.tar.gz"
-                    },
-                    "aarch64": {
-                        "url": "https://cdn.azul.com/zulu/bin/zulu21.48.17-ca-jdk21.0.10-linux_aarch64.tar.gz"
-                    }
-                }
-            }
-        },
-        "liberica": {
-            "25": {
-                "windows": {
-                    "x64": {
-                        "url": "https://download.bell-sw.com/java/25.0.2+12/bellsoft-jdk25.0.2+12-windows-amd64.zip"
-                    },
-                    "aarch64": {
-                        "url": "https://download.bell-sw.com/java/25.0.2+12/bellsoft-jdk25.0.2+12-windows-aarch64.zip"
-                    }
-                },
-                "macos": {
-                    "x64": {
-                        "url": "https://download.bell-sw.com/java/25.0.2+12/bellsoft-jdk25.0.2+12-macos-amd64.tar.gz"
-                    },
-                    "aarch64": {
-                        "url": "https://download.bell-sw.com/java/25.0.2+12/bellsoft-jdk25.0.2+12-macos-aarch64.tar.gz"
-                    }
-                },
-                "linux": {
-                    "x64": {
-                        "url": "https://download.bell-sw.com/java/25.0.2+12/bellsoft-jdk25.0.2+12-linux-amd64.tar.gz"
-                    },
-                    "aarch64": {
-                        "url": "https://download.bell-sw.com/java/25.0.2+12/bellsoft-jdk25.0.2+12-linux-aarch64.tar.gz"
-                    }
-                }
-            },
-            "21": {
-                "windows": {
-                    "x64": {
-                        "url": "https://download.bell-sw.com/java/21.0.10+10/bellsoft-jdk21.0.10+10-windows-amd64.zip"
-                    },
-                    "aarch64": {
-                        "url": "https://download.bell-sw.com/java/21.0.10+10/bellsoft-jdk21.0.10+10-windows-aarch64.zip"
-                    }
-                },
-                "macos": {
-                    "x64": {
-                        "url": "https://download.bell-sw.com/java/21.0.10+10/bellsoft-jdk21.0.10+10-macos-amd64.tar.gz"
-                    },
-                    "aarch64": {
-                        "url": "https://download.bell-sw.com/java/21.0.10+10/bellsoft-jdk21.0.10+10-macos-aarch64.tar.gz"
-                    }
-                },
-                "linux": {
-                    "x64": {
-                        "url": "https://download.bell-sw.com/java/21.0.10+10/bellsoft-jdk21.0.10+10-linux-amd64.tar.gz"
-                    },
-                    "aarch64": {
-                        "url": "https://download.bell-sw.com/java/21.0.10+10/bellsoft-jdk21.0.10+10-linux-aarch64.tar.gz"
-                    }
-                }
-            },
-            "17": {
-                "windows": {
-                    "x64": {
-                        "url": "https://download.bell-sw.com/java/17.0.18+10/bellsoft-jdk17.0.18+10-windows-amd64.zip"
-                    },
-                    "aarch64": {
-                        "url": "https://download.bell-sw.com/java/17.0.18+10/bellsoft-jdk17.0.18+10-windows-aarch64.zip"
-                    }
-                },
-                "macos": {
-                    "x64": {
-                        "url": "https://download.bell-sw.com/java/17.0.18+10/bellsoft-jdk17.0.18+10-macos-amd64.tar.gz"
-                    },
-                    "aarch64": {
-                        "url": "https://download.bell-sw.com/java/17.0.18+10/bellsoft-jdk17.0.18+10-macos-aarch64.tar.gz"
-                    }
-                },
-                "linux": {
-                    "x64": {
-                        "url": "https://download.bell-sw.com/java/17.0.18+10/bellsoft-jdk17.0.18+10-linux-amd64.tar.gz"
-                    },
-                    "aarch64": {
-                        "url": "https://download.bell-sw.com/java/17.0.18+10/bellsoft-jdk17.0.18+10-linux-aarch64.tar.gz"
-                    }
-                }
-            },
-            "11": {
-                "windows": {
-                    "x64": {
-                        "url": "https://download.bell-sw.com/java/11.0.30+9/bellsoft-jdk11.0.30+9-windows-amd64.zip"
-                    },
-                    "aarch64": {
-                        "url": "https://download.bell-sw.com/java/11.0.30+9/bellsoft-jdk11.0.30+9-windows-aarch64.zip"
-                    }
-                },
-                "macos": {
-                    "x64": {
-                        "url": "https://download.bell-sw.com/java/11.0.30+9/bellsoft-jdk11.0.30+9-macos-amd64.tar.gz"
-                    },
-                    "aarch64": {
-                        "url": "https://download.bell-sw.com/java/11.0.30+9/bellsoft-jdk11.0.30+9-macos-aarch64.tar.gz"
-                    }
-                },
-                "linux": {
-                    "x64": {
-                        "url": "https://download.bell-sw.com/java/11.0.30+9/bellsoft-jdk11.0.30+9-linux-amd64.tar.gz"
-                    },
-                    "aarch64": {
-                        "url": "https://download.bell-sw.com/java/11.0.30+9/bellsoft-jdk11.0.30+9-linux-aarch64.tar.gz"
-                    }
-                }
-            },
-            "8": {
-                "windows": {
-                    "x64": {
-                        "url": "https://download.bell-sw.com/java/8u482+10/bellsoft-jdk8u482+10-windows-amd64.zip"
-                    }
-                },
-                "macos": {
-                    "x64": {
-                        "url": "https://download.bell-sw.com/java/8u482+10/bellsoft-jdk8u482+10-macos-amd64.tar.gz"
-                    },
-                    "aarch64": {
-                        "url": "https://download.bell-sw.com/java/8u482+10/bellsoft-jdk8u482+10-macos-aarch64.tar.gz"
-                    }
-                },
-                "linux": {
-                    "x64": {
-                        "url": "https://download.bell-sw.com/java/8u482+10/bellsoft-jdk8u482+10-linux-amd64.tar.gz"
-                    },
-                    "aarch64": {
-                        "url": "https://download.bell-sw.com/java/8u482+10/bellsoft-jdk8u482+10-linux-aarch64.tar.gz"
-                    }
-                }
-            }
-        },
-        "sap": {
-            "26": {
-                "windows": {
-                    "x64": {
-                        "url": "https://github.com/SAP/SapMachine/releases/download/sapmachine-26/sapmachine-jdk-26_windows-x64_bin.zip"
-                    }
-                },
-                "macos": {
-                    "aarch64": {
-                        "url": "https://github.com/SAP/SapMachine/releases/download/sapmachine-26/sapmachine-jdk-26_macos-aarch64_bin.tar.gz"
-                    }
-                },
-                "linux": {
-                    "x64": {
-                        "url": "https://github.com/SAP/SapMachine/releases/download/sapmachine-26/sapmachine-jdk-26_linux-x64_bin.tar.gz"
-                    },
-                    "aarch64": {
-                        "url": "https://github.com/SAP/SapMachine/releases/download/sapmachine-26/sapmachine-jdk-26_linux-aarch64_bin.tar.gz"
-                    }
-                },
-                "aix": {
-                    "ppc64le": {
-                        "url": "https://github.com/SAP/SapMachine/releases/download/sapmachine-26/sapmachine-jdk-26_aix-ppc64_bin.tar.gz"
-                    }
-                }
-            },
-            "25": {
-                "windows": {
-                    "x64": {
-                        "url": "https://github.com/SAP/SapMachine/releases/download/sapmachine-25.0.3%2B6/sapmachine-jdk-25.0.3-ea.6_windows-x64_bin.zip"
-                    }
-                },
-                "macos": {
-                    "aarch64": {
-                        "url": "https://github.com/SAP/SapMachine/releases/download/sapmachine-25.0.3%2B6/sapmachine-jdk-25.0.3-ea.6_macos-aarch64_bin.tar.gz"
-                    }
-                },
-                "linux": {
-                    "x64": {
-                        "url": "https://github.com/SAP/SapMachine/releases/download/sapmachine-25.0.3%2B6/sapmachine-jdk-25.0.3-ea.6_linux-x64_bin.tar.gz"
-                    },
-                    "aarch64": {
-                        "url": "https://github.com/SAP/SapMachine/releases/download/sapmachine-25.0.3%2B6/sapmachine-jdk-25.0.3-ea.6_linux-aarch64_bin.tar.gz"
-                    }
-                },
-                "aix": {
-                    "ppc64le": {
-                        "url": "https://github.com/SAP/SapMachine/releases/download/sapmachine-25.0.3%2B6/sapmachine-jdk-25.0.3-ea.6_aix-ppc64_bin.tar.gz"
-                    }
-                }
-            },
-            "21": {
-                "windows": {
-                    "x64": {
-                        "url": "https://github.com/SAP/SapMachine/releases/download/sapmachine-21.0.11%2B7/sapmachine-jdk-21.0.11-ea.7_windows-x64_bin.zip"
-                    }
-                },
-                "macos": {
-                    "aarch64": {
-                        "url": "https://github.com/SAP/SapMachine/releases/download/sapmachine-21.0.11%2B7/sapmachine-jdk-21.0.11-ea.7_macos-aarch64_bin.tar.gz"
-                    }
-                },
-                "linux": {
-                    "x64": {
-                        "url": "https://github.com/SAP/SapMachine/releases/download/sapmachine-21.0.11%2B7/sapmachine-jdk-21.0.11-ea.7_linux-x64_bin.tar.gz"
-                    },
-                    "aarch64": {
-                        "url": "https://github.com/SAP/SapMachine/releases/download/sapmachine-21.0.11%2B7/sapmachine-jdk-21.0.11-ea.7_linux-aarch64_bin.tar.gz"
-                    }
-                },
-                "aix": {
-                    "ppc64le": {
-                        "url": "https://github.com/SAP/SapMachine/releases/download/sapmachine-21.0.11%2B6/sapmachine-jdk-21.0.11-ea.6_aix-ppc64_bin.tar.gz"
-                    }
-                }
-            },
-            "17": {
-                "windows": {
-                    "x64": {
-                        "url": "https://github.com/SAP/SapMachine/releases/download/sapmachine-17.0.19%2B7/sapmachine-jdk-17.0.19-ea.7_windows-x64_bin.zip"
-                    }
-                },
-                "macos": {
-                    "x64": {
-                        "url": "https://github.com/SAP/SapMachine/releases/download/sapmachine-17.0.19%2B7/sapmachine-jdk-17.0.19-ea.7_macos-x64_bin.tar.gz"
-                    },
-                    "aarch64": {
-                        "url": "https://github.com/SAP/SapMachine/releases/download/sapmachine-17.0.19%2B7/sapmachine-jdk-17.0.19-ea.7_macos-aarch64_bin.tar.gz"
-                    }
-                },
-                "linux": {
-                    "x64": {
-                        "url": "https://github.com/SAP/SapMachine/releases/download/sapmachine-17.0.19%2B7/sapmachine-jdk-17.0.19-ea.7_linux-x64_bin.tar.gz"
-                    },
-                    "aarch64": {
-                        "url": "https://github.com/SAP/SapMachine/releases/download/sapmachine-17.0.19%2B7/sapmachine-jdk-17.0.19-ea.7_linux-aarch64_bin.tar.gz"
-                    }
-                }
-            }
-        },
-        "graalvm-ce": {
-            "25": {
-                "windows": {
-                    "x64": {
-                        "url": "https://github.com/graalvm/graalvm-ce-builds/releases/download/jdk-25.0.2/graalvm-community-jdk-25.0.2_windows-x64_bin.zip"
-                    }
-                },
-                "macos": {
-                    "aarch64": {
-                        "url": "https://github.com/graalvm/graalvm-ce-builds/releases/download/jdk-25.0.2/graalvm-community-jdk-25.0.2_macos-aarch64_bin.tar.gz"
-                    }
-                },
-                "linux": {
-                    "x64": {
-                        "url": "https://github.com/graalvm/graalvm-ce-builds/releases/download/jdk-25.0.2/graalvm-community-jdk-25.0.2_linux-x64_bin.tar.gz"
-                    },
-                    "aarch64": {
-                        "url": "https://github.com/graalvm/graalvm-ce-builds/releases/download/jdk-25.0.2/graalvm-community-jdk-25.0.2_linux-aarch64_bin.tar.gz"
-                    }
-                }
-            },
-            "17": {
-                "windows": {
-                    "x64": {
-                        "url": "https://github.com/graalvm/graalvm-ce-builds/releases/download/jdk-17.0.7/graalvm-community-jdk-17.0.7_windows-x64_bin.zip"
-                    }
-                },
-                "macos": {
-                    "x64": {
-                        "url": "https://github.com/graalvm/graalvm-ce-builds/releases/download/jdk-17.0.7/graalvm-community-jdk-17.0.7_macos-x64_bin.tar.gz"
-                    },
-                    "aarch64": {
-                        "url": "https://github.com/graalvm/graalvm-ce-builds/releases/download/jdk-17.0.7/graalvm-community-jdk-17.0.7_macos-aarch64_bin.tar.gz"
-                    }
-                },
-                "linux": {
-                    "x64": {
-                        "url": "https://github.com/graalvm/graalvm-ce-builds/releases/download/jdk-17.0.7/graalvm-community-jdk-17.0.7_linux-x64_bin.tar.gz"
-                    },
-                    "aarch64": {
-                        "url": "https://github.com/graalvm/graalvm-ce-builds/releases/download/jdk-17.0.7/graalvm-community-jdk-17.0.7_linux-aarch64_bin.tar.gz"
+                    "linux": {
+                        "x64": {
+                            "url": "https://github.com/JetBrains/kotlin/releases/download/v2.3.20/kotlin-native-prebuilt-linux-x86_64-2.3.20.tar.gz"
+                        }
                     }
                 }
             }
